@@ -5,7 +5,7 @@
 char name[10]; //이름저장소
 int mvcnt = 0; //움직임카운트
 int stage = 1; //스테이지 값
-char map[5][30][30] = 0;
+char map[5][30][30] = 0;//
 
 int getch(void)
 {
@@ -29,17 +29,24 @@ int getch(void)
 	return ch;
 }
 
-int file_open
+void file_open()//
 {
    FILE*fp;
    fp = fopen("map.txt","r");
-
-   while ((feof(fp)) != EOF)
+   char t;
+   while (fscanf(f,"%c",&t) != EOF)
    {
-   for(int i=0; i<30;i++)
-   	for
-   fscanf(fp, "%s", map[i]);
-   i++;
+   for(int z=0; z<5;z++){
+   	for(int y=0; y<30; y++){
+		if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e')
+			y=30;
+		for(int x=0; x<30;x++){
+			if(t=='\n')
+				x=30;
+			map[z][y][x]=a;
+   			
+   		}
+   	}
    }
 }
 
@@ -148,7 +155,7 @@ void man() //d누르면 실행될 수 있도록 만들어야함//
 
 void con()//단계별 완료시 축하메시지
 {
-   printf("congratulation");
+   printf("ongratulation");
    return 0;
 }
 
