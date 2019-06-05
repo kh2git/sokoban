@@ -32,10 +32,12 @@ int getch(void)
 int file_open
 {
    FILE*fp;
-   fp = fopen("map.txt","rw");
+   fp = fopen("map.txt","r");
 
    while ((feof(fp)) != EOF)
    {
+   for(int i=0; i<30;i++)
+   	for
    fscanf(fp, "%s", map[i]);
    i++;
    }
@@ -97,7 +99,9 @@ void inputname() //이름입력
 {
 
    printf("이름 입력 : ");
+   for(int i=0; i<10; i++){
    scanf("%s",name[i]);
+   }
 }
 
 void map_print() //맵출력
@@ -117,13 +121,13 @@ void inputkey(char input_char) //키보드입력
    switch (input_char)
    case 'h':
 	x = -1
-		break;
+	break;
    case 'j':
 	y = -1
 	break;
    case 'k':
 	y = 1;
-		break;
+	break;
    case 'l':
 	x = 1;
 	break;
