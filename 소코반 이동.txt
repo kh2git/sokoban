@@ -1,0 +1,182 @@
+ case 'k': // À§; ¿ÀÈ÷·Á ÁÂÇ¥ °¨¼Ò
+
+      if (map[n][x-1][y] == 36) // $
+      {
+         if(map[n][x-2][y] == 32 || map[n][x-2][y] == 79)
+            // »óÀÚ ¿·ÀÌ ºó°ø°£
+         {
+          if(Floor[n][x][y])
+             map[n][x][y] = 79;
+          else
+             map[n][x][y] = 32;
+          map[n][x-2][y] = 36;
+          map[n][x-1][y] = 64;
+          break;
+         }
+         else
+            break;
+      }
+
+      else if (map[n][x-1][y] == 32) // sp(ºó °ø°£)
+      {
+         if(Floor[n][x][y]) // 1ÀÏ °æ¿ì O¹Ù´Ú // 0ÀÏ °æ¿ì ¸Ç¹Ù´Ú
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 32;
+
+         map[n][x-1][y] = 64;
+         break;
+      }
+      else if (map[n][x-1][y] == 79)
+      {
+         if(Floor[n][x][y])
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 32;
+
+         map[n][x-1][y] = 64;
+         break;
+      }
+      else
+         break;
+
+      case 'j': // À§; ¿ÀÈ÷·Á ÁÂÇ¥ °¨¼Ò
+
+      if (map[n][x+1][y] == 36) // $
+      {
+         if(map[n][x+2][y] == 32 || map[n][x+2][y] == 79)
+            // »óÀÚ ¿·ÀÌ ºó°ø°£
+         {
+          if(Floor[n][x][y])
+             map[n][x][y] = 79;
+          else
+             map[n][x][y] = 32;
+          map[n][x+2][y] = 36;
+          map[n][x+1][y] = 64;
+          break;
+         }
+         else
+            break;
+      }
+
+      else if (map[n][x+1][y] == 32) // sp(ºó °ø°£)
+      {
+         if(Floor[n][x][y]) // 1ÀÏ °æ¿ì O¹Ù´Ú // 0ÀÏ °æ¿ì ¸Ç¹Ù´Ú
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 32;
+
+         map[n][x+1][y] = 64;
+         break;
+      }
+      else if (map[n][x+1][y] == 79)
+      {
+         if(Floor[n][x][y])
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 32;
+
+         map[n][x+1][y] = 64;
+         break;
+      }
+      else
+         break;
+
+
+      case 'l':
+
+      if (map[n][x][y+1] == 36) // $
+      {
+         if(map[n][x][y+2] == 32 || map[n][x][y+2] == 79)
+            // »óÀÚ ¿·ÀÌ ºó°ø°£
+         {
+          if(Floor[n][x][y])
+
+             map[n][x][y] = 79;
+          else
+             map[n][x][y] = 32;
+          map[n][x][y+2] = 36;
+          map[n][x][y+1] = 64;
+          break;
+         }
+         else
+            break;
+      }
+
+      else if (map[n][x][y+1] == 32) // sp(ºó °ø°£)
+      {
+         if(Floor[n][x][y]) // 1ÀÏ °æ¿ì O¹Ù´Ú // 0ÀÏ °æ¿ì ¸Ç¹Ù´Ú
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 32;
+
+         map[n][x][y+1] = 64;
+         break;
+      }
+      else if (map[n][x][y+1] == 79)
+      {
+         if(Floor[n][x][y])
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 32;
+
+         map[n][x][y+1] = 64;
+         break;
+      }
+      else
+         break;
+
+
+      case 'h': // À§; ¿ÀÈ÷·Á ÁÂÇ¥ °¨¼Ò
+
+      if (map[n][x][y-1] == 36) // $
+      {
+         if(map[n][x][y-2] == 32 || map[n][x][y-2] == 79)
+            // »óÀÚ ¿·ÀÌ ºó°ø°£
+         {
+          if(Floor[n][x][y])
+             map[n][x][y] = 79;
+          else
+             map[n][x][y] = 32;
+          map[n][x][y-2] = 36;
+          map[n][x][y-1] = 64;
+          break;
+         }
+         else
+            break;
+      }
+
+      else if (map[n][x][y-1] == 32) // sp(ºó °ø°£)
+      {
+         if(Floor[n][x][y]) // 1ÀÏ °æ¿ì O¹Ù´Ú // 0ÀÏ °æ¿ì ¸Ç¹Ù´Ú
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 32;
+
+         map[n][x][y-1] = 64;
+         break;
+      }
+      else if (map[n][x][y-1] == 79)
+      {
+         if(Floor[n][x][y])
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 32;
+
+         map[n][x][y-1] = 64;
+         break;
+      }
+      else
+         break;
+   }
+     for(int i=1;i<size[n];i++){
+          for(int j=0;j<30;j++){
+               if( u == 7 )
+               u = 1;
+               Undo[u][n][i][j] = map[n][i][j];
+          }
+     }
+
+     f= finish();
+return u;
+}
