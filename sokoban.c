@@ -54,7 +54,9 @@ int getch(void)
 		fscanf(fp,"%c",&t);
                 if(t=='\n')
 	        break;
-	        
+	        if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e'){
+		break;
+		}
                 else
                     map[z][x][y]=t;
             }
