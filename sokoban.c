@@ -41,14 +41,13 @@ void map_open() //
    for(int z=0; z<5; z++){
    	for(int y=0; y<30; y++){
 		if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e')
-			y=30;
+			break;
 		else{
 			for(int x=0; x<30; x++){
 				if(t=='\n')
-					map[z][x][y]=t;
-					x=30;
-				else
-					map[z][x][y]=t;
+					break;
+				
+				map[z][x][y]=t;
    			
    		}
 	        }
@@ -91,7 +90,7 @@ void map_print() //맵출력
 {
 	system("clear");
 	for(int i=0; i<10; i++){
-  	printf("%",name[i]);
+  	printf("%c",name[i]);
    	}
 	printf("\n");
 	for (int i = 0; i < 30; i++) {
