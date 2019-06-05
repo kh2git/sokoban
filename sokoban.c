@@ -90,7 +90,7 @@ void map_print() //맵출력
 {
 	system(clear);
 	for(int i=0; i<10; i++){
-  	printf("%s",name[i]);
+  	printf("%",name[i]);
    	}
 	printf("\n");
 	for (int i = 0; i < 30; i++) {
