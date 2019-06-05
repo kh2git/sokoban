@@ -37,12 +37,12 @@ void map_open() //
    char t;
    while (fscanf(f,"%c",&t) != EOF)
    {
-   for(int z=0; z<5;z++){
+   for(int z=0; z<5; z++){
    	for(int y=0; y<30; y++){
 		if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e')
 			y=30;
 		else{
-			for(int x=0; x<30;x++){
+			for(int x=0; x<30; x++){
 				if(t=='\n')
 					x=30;
 				else
@@ -58,9 +58,9 @@ void map_cnt() //맵박스개수체크
 {
    int cnt1 = 0;
    int cnt2 = 0;
-   for (int i = 0; i < 5,i++) {
-	  for (int j = 0; j < 30,i++) {
-		 for (int k = 0; k < 30,k++) {
+   for (int i = 0; i < 5; i++) {
+	  for (int j = 0; j < 30; i++) {
+		 for (int k = 0; k < 30; k++) {
 			if (map[i][j][k] == '$')
 			   cnt1++;
 			if (map[i][j][k] == 'O')
