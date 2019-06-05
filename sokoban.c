@@ -31,29 +31,40 @@ int getch(void)
 	return ch;
 }
 
-void map_open() //
+
+   void map_open() //맵 입력
 {
+
    FILE*fp;
+
    fp = fopen("map.txt","r");
-   char t;
-   while (t=getc(fp) != EOF)
-   {
+
+   char t=0;
+
    for(int z=0; z<5; z++){
-   	for(int y=0; y<30; y++){
-		if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e')
-			break;
-		else{
-			for(int x=0; x<30; x++){
-				if(t=='\n')
-					break;
-				
-				map[z][x][y]=t;
-   			
-   		}
-	        }
-   	}
-   }
+
+    for(int y=0; y<30; y++){
+
+        if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e'){
+	break;
 }
+        else{
+
+            for(int x=0; x<30; x++){
+		fscanf(fp,"%c",&t);
+                if(t=='\n')
+	        break;
+	        
+                else
+                    map[z][x][y]=t;
+            }
+        }
+            }
+    }
+	fclose(fp);
+}
+
+
 
 void map_cnt() //맵박스개수체크
 {
@@ -95,7 +106,7 @@ void map_print() //맵출력
 	printf("\n");
 	for (int i = 0; i < 30; i++) {
 		for (int j = 0; j < 30; j++) {
-			printf("%c",map[stage][i][j]);
+			printf("%c",map[stage][j][i]);
 		}
 		printf("\n");
 	}
