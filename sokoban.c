@@ -5,7 +5,7 @@
 char name[10]; //이름저장소
 int mvcnt = 0; //움직임카운트
 int stage = 1; //스테이지 값
-char map[5][30][30] = 0;//
+char map[5][30][30] = {0};//맵
 
 int getch(void)
 {
@@ -40,41 +40,18 @@ void file_open()//
    	for(int y=0; y<30; y++){
 		if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e')
 			y=30;
-		for(int x=0; x<30;x++){
-			if(t=='\n')
-				x=30;
-			map[z][y][x]=a;
+		else{
+			for(int x=0; x<30;x++){
+				if(t=='\n')
+					x=30;
+				else
+					map[z][x][y]=a;
    			
    		}
+	        }
    	}
    }
 }
-
-char map[5][30][30] =
-{
-   {
-   맵1 들어갈자리
-   }
-
-   {
-   맵2 들어갈자리
-   }
-
-   {
-   맵3 들어갈자리
-   }
-
-   {
-   맵4 들어갈자리
-   }
-
-   {
-   맵5 들어갈자리
-   {
-
-   }
-}//맵12345
-
 
 void map_cnt() //맵박스개수체크
 {
@@ -114,7 +91,10 @@ void inputname() //이름입력
 void map_print() //맵출력
 {
 	system(clear);
-
+	for(int i=0; i<10; i++){
+  	printf("%s",name[i]);
+   	}
+	printf("\n");
 	for (int i = 0; i < 30; i++) {
 		for (int j = 0; j < 30; j++) {
 			printf("%c",map[stage][i][j]);
@@ -128,15 +108,40 @@ void inputkey(char input_char) //키보드입력
    switch (input_char)
    case 'h':
 	x = -1
+	cnt++;
 	break;
    case 'j':
 	y = -1
+	cnt++;
 	break;
    case 'k':
 	y = 1;
+	cnt++;
 	break;
    case 'l':
 	x = 1;
+	cnt++;
+	break;
+   case 'u':
+	cnt++;
+	break;
+   case 'r':
+	
+	break;
+   case 'n':
+	
+	break;
+   case 'e':
+	
+	break;
+   case 's':
+	
+	break;
+   case 'f':
+	
+	break;
+   case 'd':
+	
 	break;
 }
 
@@ -155,7 +160,7 @@ void man() //d누르면 실행될 수 있도록 만들어야함//
 
 void con()//단계별 완료시 축하메시지
 {
-   printf("ongratulation");
+   printf("Congratulation");
    return 0;
 }
 
