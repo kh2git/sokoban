@@ -84,7 +84,8 @@ void inputname() //이름입력
 {
 
    printf("이름 입력 : ");
-   scanf("%s",name);
+   for (int i=0; i<10; i++){
+	   scanf("%c",name[i]);
 }
 
 void map_print() //맵출력
