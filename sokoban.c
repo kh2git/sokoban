@@ -45,26 +45,24 @@ int getch(void)
 
     for(int y=0; y<30; y++){
 
-        if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e'){
-	break;
-}
-        else{
-
             for(int x=0; x<30; x++){
-		fscanf(fp,"%c",&t);
+                fscanf(fp,"%c",&t);
                 if(t=='\n')
-	        break;
-	        if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e'){
-		break;
-		}
+                break;
+                if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e'){
+                break;
+                }
                 else
                     map[z][x][y]=t;
             }
+            if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e'){
+                break;
+                }
         }
             }
+   fclose(fp);
     }
-	fclose(fp);
-}
+
 
 
 
