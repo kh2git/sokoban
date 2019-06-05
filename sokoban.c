@@ -7,6 +7,7 @@ int mvcnt = 0; //움직임카운트
 int stage = 1; //스테이지 값
 char map[5][30][30] = {0};//맵
 
+
 int getch(void)
 {
 	int ch;
@@ -148,6 +149,7 @@ void inputkey(char input_char) //키보드입력
 
 void man() //d누르면 실행될 수 있도록 만들어야함//
 {
+   system("clear")
    printf("창고지기 조정 : 왼쪽-h, 아래-j, 위-k, 오른쪽-l\n");
    printf("가장 최근의 이동기록 취소(5번까지 사용가능 - u\n");
    printf("현재 맵을 처음부터 다시시작 - r\n");
