@@ -72,7 +72,6 @@ void map_cnt() //맵박스개수체크
 
 	  printf("잘못된 맵입니다.");
 
-	  return 0;
 	  }
 	  cnt1 = 0;
 	  cnt2 = 0;
