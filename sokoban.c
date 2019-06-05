@@ -7,6 +7,7 @@ char name[10]; //이름저장소
 int mvcnt = 0; //움직임카운트
 int stage = 0; //스테이지 값
 char map[5][30][30] = {0};//맵
+int x_check, y_check; //창고지기의 위치
 
 
 int getch(void)
@@ -97,6 +98,18 @@ void inputname() //이름입력
    scanf("%s",name);
 }
 
+void check() //창고지기의 위치
+{
+	int x, y;
+	for(x=0; x<30; x++){
+		for(y=0; y<30; y++){
+			if(map[stage][x][y]=='@'){
+				x_check = x;
+				y_check = y;
+		}
+	}
+}
+	
 void map_print() //맵출력
 {
 	system("clear");
