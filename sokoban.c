@@ -80,7 +80,7 @@ void map_cnt() //맵박스개수체크
 }
 
 
-void inputname() //이름입력, 출력할때는 for문사용
+void inputname() //이름입력
 {
    printf("이름 입력 : ");
    scanf("%s",name);
