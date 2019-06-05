@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <termio.h>
-#include <Windows.h>
+#include <windows.h>
 
 char name[10]; //이름저장소
 int mvcnt = 0; //움직임카운트
