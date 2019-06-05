@@ -30,7 +30,7 @@ int getch(void)
 	return ch;
 }
 
-void file_open() //
+void map_open() //
 {
    FILE*fp;
    fp = fopen("map.txt","r");
