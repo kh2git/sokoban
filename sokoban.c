@@ -36,7 +36,7 @@ void map_open() //
    FILE*fp;
    fp = fopen("map.txt","r");
    char t;
-   while (fscanf(fp,"%c",&t) != EOF)
+   while (t=getc(fp) != EOF)
    {
    for(int z=0; z<5; z++){
    	for(int y=0; y<30; y++){
