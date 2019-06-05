@@ -82,10 +82,8 @@ void map_cnt() //맵박스개수체크
 
 void inputname() //이름입력
 {
-
    printf("이름 입력 : ");
-   for (int i=0; i<10; i++){
-	   scanf("%c",name[i]);
+   scanf("%s",name);
 }
 
 void map_print() //맵출력
