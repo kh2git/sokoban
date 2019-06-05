@@ -5,7 +5,7 @@
 
 char name[10]; //이름저장소
 int mvcnt = 0; //움직임카운트
-int stage = 1; //스테이지 값
+int stage = 0; //스테이지 값
 char map[5][30][30] = {0};//맵
 
 
@@ -45,6 +45,7 @@ void map_open() //
 		else{
 			for(int x=0; x<30; x++){
 				if(t=='\n')
+					map[z][x][y]=t;
 					x=30;
 				else
 					map[z][x][y]=t;
