@@ -89,7 +89,7 @@ void inputname() //이름입력
 
 void map_print() //맵출력
 {
-	system(clear);
+	system("clear");
 	for(int i=0; i<10; i++){
   	printf("%",name[i]);
    	}
