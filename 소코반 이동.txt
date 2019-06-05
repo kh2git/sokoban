@@ -40,7 +40,7 @@
       else
          break;
 
-      case 'j': // 위; 오히려 좌표 감소
+      case 'j': // 아래; 좌표 증가
 
       if (map[n][x+1][y] == 36) // $
       {
