@@ -103,7 +103,7 @@ void check() //창고지기의 위치
 	int x, y;
 	for(x=0; x<30; x++){
 		for(y=0; y<30; y++){
-			if(map[stage][x][y]=='@'){
+			if(map[stage-1][x][y]=='@'){
 				x_check = x;
 				y_check = y;
 		}
@@ -119,7 +119,7 @@ void map_print() //맵출력
 	printf("\n");
 	for (int i = 0; i < 30; i++) {
 		for (int j = 0; j < 30; j++) {
-			printf("%c",map[stage][j][i]);
+			printf("%c",map[stage-1][j][i]);
 		}
 		printf("\n");
 	}
