@@ -189,5 +189,7 @@ void con()//단계별 완료시 축하메시지
 
 int main(void)
 {
-
+	printf("Start...");
+	inputname();
+	system("clear");
 }
