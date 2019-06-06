@@ -8,7 +8,9 @@ int mvcnt = 0; //움직임카운트
 int stage = 0; //스테이지 값
 char map[5][30][30] = {0};//맵
 int x_check, y_check; //창고지기의 위치
-
+int score[5][5] = {0};	// 스테이지, 순위별 이동횟수 저장소
+int rsc[5][5] = {0};	// 여기에 방금 끝낸 게임 이동횟수 들어감
+char names[5][5][10];	// 각 스테이지/순위별 플레이어 이름
 
 int getch(void)
 {
@@ -185,6 +187,57 @@ void con()//단계별 완료시 축하메시지
 {
    printf("Congratulation");
    return 0;
+}
+
+void ranking()	//랭킹입력함수
+{
+	FILE*ifp;
+	FILE*ofp;
+	char rdata;
+	ifp = fopen("ranking.txt", "r"); 
+	ofp = fopen("ranking.txt", "w");
+	fscanf(ipf,"%c",&rdata);
+	if (rdata =! 'm')
+	{
+		for (int i=0; i<=4; i++)
+		{
+			int n = i + 1;
+			fprintf(ofp, "map%d\n\n",n);
+			for (int k=0; k<=9; k++)
+				name[i][0][k] = name[l];
+			for (int j=0; j<=4; j++){
+				for (int k=0; k<=9; k++)
+					fprintf(ofp, "%c", names[i][j][k]);
+				fprintf(ofp, " %d\n\n", score[i][j]);
+			}
+		}
+	}
+	else
+	{
+		for (int i=0; i<=4; i++)
+		{
+			int n = i + 1;
+			fprintf(ofp, "map%d\n\n",n);
+			for (int j=0; j<=4; j++)
+			{
+				if (rsc[i][j] < score[i][j]){	//이동횟수 비교
+					score[i][j] = rsc[i][j];
+					names[i][j] = name;
+				}
+				else if (rsc[i][j] = score[i][j]) || j<4){
+					score[i][j+1] = rsc[i][j];
+					names[i][j+1] = name;
+				}
+				else
+					;
+				for (int j=0; j<=4; j++){
+					for (int k=0; k<=9; k++)
+						fprintf(ofp, "%c", names[i][j][k]);
+				fprintf(ofp, " %d\n\n", score[i][j]);
+				}
+			}
+		}
+	}
 }
 
 int main(void)
