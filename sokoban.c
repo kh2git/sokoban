@@ -9,7 +9,7 @@ int stage = 0; //스테이지 값
 char map[5][30][30] = {0};//맵
 int x_check, y_check; //창고지기의 위치
 int score[5][5] = {0};	// 스테이지, 순위별 이동횟수 저장소
-int rsc[5][5] = {0};	// 여기에 방금 끝낸 게임 이동횟수 들어감
+int rsc[5] = {0};	// 여기에 방금 끝낸 게임 이동횟수 들어감
 char names[5][5][10];	// 각 스테이지/순위별 플레이어 이름
 
 int getch(void)
@@ -220,12 +220,12 @@ void ranking()	//랭킹입력함수
 			fprintf(ofp, "map%d\n\n",n);
 			for (int j=0; j<=4; j++)
 			{
-				if (rsc[i][j] < score[i][j]){	//이동횟수 비교
-					score[i][j] = rsc[i][j];
+				if (rsc[i] < score[i][j]){	//이동횟수 비교
+					score[i][j] = rsc[i];
 					names[i][j] = name;
 				}
-				else if (rsc[i][j] = score[i][j]) || j<4){
-					score[i][j+1] = rsc[i][j];
+				else if (rsc[i] = score[i][j]) || j<4){
+					score[i][j+1] = rsc[i];
 					names[i][j+1] = name;
 				}
 				else
