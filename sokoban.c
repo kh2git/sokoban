@@ -387,6 +387,12 @@ void inputkey(char input_char) //키보드입력
    case 'e':
 	
 	break;
+
+   case 'f':
+	
+	break;
+   
+}
    void save() // 's'명령어 , 시간과 맵상황을 저장해서 sokoban.txt 파일에 저장, 뭐 더 save 할게 있으면 추가하고
 	{
 	end = time(NULL);
@@ -410,11 +416,9 @@ void inputkey(char input_char) //키보드입력
 	n = temp;
 	fclose(out);
 		}
-   case 'f':
 	
-	break;
-   void display() // display help
-   {
+	void display() // display help
+{
      printf("h(왼쪽), j(아래), k(위), l(오른쪽)\n");
      printf("u(undo)\n");
      printf("r(replay)\n");
@@ -425,12 +429,9 @@ void inputkey(char input_char) //키보드입력
      printf("d(display help\n");
      printf("t(top)\n");
 }
-}
-
 
 void man() //d누르면 실행될 수 있도록 만들어야함//
 {
-   system("clear")
    printf("창고지기 조정 : 왼쪽-h, 아래-j, 위-k, 오른쪽-l\n");
    printf("가장 최근의 이동기록 취소(5번까지 사용가능 - u\n");
    printf("현재 맵을 처음부터 다시시작 - r\n");
