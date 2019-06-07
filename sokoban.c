@@ -8,9 +8,10 @@ int n = 0; //스테이지 값
 char map[5][30][30] = {0};//맵
 char Undo[7][5][MAX][MAX]={0}; //Undo[0]은 read했을때 모습유지, 나머지 undo 명령어를 위한 공
 int x, y; //창고지기의 위치
-int score[5][5] = {0};	// 스테이지, 순위별 이동횟수 저장소
-int rsc[5] = {0};	// 여기에 방금 끝낸 게임 이동횟수 들어감
-char names[5][5][10];	// 각 스테이지/순위별 플레이어 이름 저장소
+int score[5][6] = {0};	// 랭킹 - 스테이지, 순위별 이동횟수 저장소
+int rsc[5] = {0};	// 랭킹 - 여기에 방금 끝낸 게임 이동횟수 들어감
+char names[5][6][10];	// 랭킹 - 각 스테이지/순위별 플레이어 이름 저장소
+int temps, tempn;   // 랭킹 - 스코어랑 이름 저장소템프
 
 int getch(void)
 {
@@ -464,15 +465,6 @@ void con()//단계별 완료시 축하메시지
    printf("Congratulation");
    return 0;
 }
-
-#include<stdio.h>
-#include<stdlib.h>
-#include<termio.h>
-
-int score[5][6] = {0};
-int rsc[5] = {0};   // 여기에 방금 끝낸 게임 이동횟수 들어감
-char names[5][6][10];   // 각 스테이지/순위별 이름
-int temps, tempn;   // 스코어랑 이름 저장소템프
 
 void ranking()  //랭킹입력함수
 {
