@@ -378,9 +378,7 @@ void inputkey(char input_char) //키보드입력
    }
    }
 	    
-   case 't':
-	
-	break;
+   
    case 'n': 
  	stage = 1;
 	cnt = 0;
@@ -391,6 +389,18 @@ void inputkey(char input_char) //키보드입력
 	break;
 
    case 'f':
+	
+	break;
+   case 'd':
+		while(1){
+			char tmp;
+			tmp=getch();
+			system("clear");
+			man();
+			if(tmp==d)
+				break;
+				}
+   case 't':
 	
 	break;
    
