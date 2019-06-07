@@ -6,7 +6,7 @@ char name[10]; //이름저장소
 int mvcnt = 0; //움직임카운트
 int stage = 1; //스테이지 값
 char map[5][30][30] = {0};//맵
-int x_check, y_check; //창고지기의 위치
+int x, y; //창고지기의 위치
 int score[5][5] = {0};	// 스테이지, 순위별 이동횟수 저장소
 int rsc[5] = {0};	// 여기에 방금 끝낸 게임 이동횟수 들어감
 char names[5][5][10];	// 각 스테이지/순위별 플레이어 이름 저장소
@@ -101,12 +101,12 @@ void inputname() //이름입력
 
 void check() //창고지기의 위치
 {
-	int x, y;
-	for(x=0; x<30; x++){
-		for(y=0; y<30; y++){
-			if(map[stage-1][x][y]=='@'){
-				x_check = x;
-				y_check = y;
+	int i, j;
+	for(i=0; i<30; i++){
+		for(j=0; j<30; j++){
+			if(map[stage-1][i][j]=='@'){
+				x = i;
+				y = j;
 		}
 	}
 }
