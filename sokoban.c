@@ -465,53 +465,78 @@ void con()//단계별 완료시 축하메시지
    return 0;
 }
 
-void ranking()	//랭킹입력함수
+#include<stdio.h>
+#include<stdlib.h>
+#include<termio.h>
+
+int score[5][6] = {0};
+int rsc[5] = {0};   // 여기에 방금 끝낸 게임 이동횟수 들어감
+char names[5][6][10];   // 각 스테이지/순위별 이름
+int temps, tempn;   // 스코어랑 이름 저장소템프
+
+void ranking()  //랭킹입력함수
 {
 	FILE*ifp;
 	FILE*ofp;
-	char rdata;
-	ifp = fopen("ranking.txt", "r"); 
-	ofp = fopen("ranking.txt", "w");
+	FILE*wfp;
+    	char rdata;
+    	ifp = fopen("ranking.txt", "r");
+    	ofp = fopen("ranking.txt", "w");
+    	wfp = fopne("ranking.txt", "a");
+    	for (int i=0; i<=4; i++)
 	fscanf(ipf,"%c",&rdata);
-	if (rdata =! 'm')
-	{
+    	fclose(ipf);
+    	if (rdata != 'm')
+    	{
+		score[i][0] = rsc[i];
 		for (int i=0; i<=4; i++)
 		{
 			int n = i + 1;
-			fprintf(ofp, "map%d\n\n",n);
-			for (int k=0; k<=9; k++)
-				name[i][0][k] = name[l];
-			for (int j=0; j<=4; j++){
-				for (int k=0; k<=9; k++)
-					fprintf(ofp, "%c", names[i][j][k]);
-				fprintf(ofp, " %d\n\n", score[i][j]);
-			}
+            		fprintf(ofp, "map%d\n\n",n);
+            		fclose(ofp);
+            		for (int k=0; k<=9; k++)
+                		names[i][0][k] = name[l];
+            		for (int k=0; k<=9; k++)
+                		fprintf(wfp, "%c", names[i][0][k]);
+			fprintf(wfp, " %d\n\n", score[i][0]);
 		}
+		fclose(wfp);
 	}
-	else
-	{
+    	else
+    	{
+		score[i][5] = rsc[i];
 		for (int i=0; i<=4; i++)
 		{
 			int n = i + 1;
 			fprintf(ofp, "map%d\n\n",n);
-			for (int j=0; j<=4; j++)
+			fclose(ofp);
+            		for (int m=0; m<=6; m++)
 			{
-				if (rsc[i] < score[i][j]){	//이동횟수 비교
-					score[i][j] = rsc[i];
-					names[i][j] = name;
-				}
-				else if (rsc[i] = score[i][j]) || j<4){
-					score[i][j+1] = rsc[i];
-					names[i][j+1] = name;
-				}
-				else
-					;
-				for (int j=0; j<=4; j++){
-					for (int k=0; k<=9; k++)
-						fprintf(ofp, "%c", names[i][j][k]);
-				fprintf(ofp, " %d\n\n", score[i][j]);
+				for (int j=0; j<=5; j++)
+				{
+					if (score[i][j] > score[i][j+1])    //이동횟수 비교
+					{
+						temps = score[i][j];
+						score[i][j] = score[i][j+1];
+						score[i][j] = temps;
+						for (int k=0; k<=9; k++)
+						{
+							tempn = names[i][j][k];
+							names[i][j][k] = names[i][j+1][k];
+							names[i][j+1][k] = tempn;
+						}
+					}
+					else
+						;
+					for (int j=0; j<=4; j++)
+					{
+						for (int k=0; k<=9; k++)
+							fprintf(wfp, "%c", names[i][j][k]);
+						fprintf(wfp, " %d\n\n", score[i][j]);
+					}
 				}
 			}
+            		fclose(wfp);
 		}
 	}
 }
