@@ -484,7 +484,7 @@ void ranking()  //랭킹입력함수
     	ofp = fopen("ranking.txt", "w");
     	wfp = fopne("ranking.txt", "a");
     	for (int i=0; i<=4; i++)
-	fscanf(ipf,"%c",&rdata);
+		fscanf(ipf,"%c",&rdata);
     	fclose(ipf);
     	if (rdata != 'm')
     	{
