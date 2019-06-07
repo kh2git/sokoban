@@ -169,16 +169,14 @@ int finish() // 맵이 정상적으로 끝나는지를 확인하는 함수, Floo
      }
 }
 
-void inputkey(char input_char) //키보드입력
-{
-    int move(int a, int u)//'창고지기'의 움직임 + Undo배열에 움직이 모습 저장
+int move(int a, int u)//'창고지기'의 움직임 + Undo배열에 움직이 모습 저장
     {
     u++;
     x = check_x(n);
     y = check_y(n);
     int o;
 	
-    switch (input_char)
+    switch (a)
     case 'h': // 위; 좌표 감소
 
       if (map[n][x][y-1] == 36) // $
@@ -358,7 +356,10 @@ void inputkey(char input_char) //키보드입력
       
        f = finish();
        return u;
-       }
+       }	
+	
+
+    
 	int undo(int u) // 'u' 명령어 함수
 	{
      	u--;
@@ -377,8 +378,12 @@ void inputkey(char input_char) //키보드입력
         }
    }
    }
+		return u;
+	}
 	    
-   
+void inputkey(char ch);
+{
+   switch(ch)
    case 'n': 
  	stage = 1;
 	cnt = 0;
