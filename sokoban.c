@@ -34,7 +34,7 @@ int getch(void)
 }
 
 
-   void map_save() //맵 입력
+   void map_open() //맵 입력
 {
 
    FILE*fp;
@@ -245,7 +245,7 @@ int main(void)
 	printf("Start...");
 	inputname();
 	system("clear");
-	map_save();
+	map_open();
 	while(1){
 	printf("Hello %s\n",name);
 	map_print();
