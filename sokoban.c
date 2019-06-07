@@ -415,7 +415,6 @@ void inputkey(char input_char) //키보드입력
 	break;
    void display() // display help
    {
-     system("clear");
      printf("h(왼쪽), j(아래), k(위), l(오른쪽)\n");
      printf("u(undo)\n");
      printf("r(replay)\n");
