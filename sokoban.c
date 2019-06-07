@@ -4,7 +4,7 @@
 
 char name[10]; //이름저장소
 int mvcnt = 0; //움직임카운트
-int stage = 1; //스테이지 값
+int n = 0; //스테이지 값
 char map[5][30][30] = {0};//맵
 char Undo[7][5][MAX][MAX]={0}; //Undo[0]은 read했을때 모습유지, 나머지 undo 명령어를 위한 공
 int x, y; //창고지기의 위치
