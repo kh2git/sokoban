@@ -381,9 +381,11 @@ void inputkey(char input_char) //키보드입력
    case 't':
 	
 	break;
-   case 'n':
-	
-	break;
+   case 'n': 
+ 	stage = 1;
+	cnt = 0;
+	map_open(); 
+ 	break; 
    case 'e':
 	
 	break;
