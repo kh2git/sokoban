@@ -34,7 +34,7 @@ int getch(void)
 }
 
 
-   void map_open() //맵 입력
+   void map_save() //맵 입력
 {
 
    FILE*fp;
@@ -241,7 +241,15 @@ void ranking()	//랭킹입력함수
 
 int main(void)
 {
+	char a;
 	printf("Start...");
 	inputname();
 	system("clear");
+	map_save();
+	while(1){
+	printf("Hello %s\n",name);
+	map_print();
+	a=getch();
+	void inputkey(a);
+	}
 }
