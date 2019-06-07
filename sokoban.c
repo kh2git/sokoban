@@ -127,6 +127,48 @@ void map_print() //맵출력
 	}
 }
 
+int check_x() // '@'의 위치(세로축)
+{
+     int check_x;
+     for(int i=1; i< size[n] ; i++){
+          for(int j=0 ; j < 30; j++)
+          {
+               if(map[n][i][j] == '@')
+                    check_x = i;
+          }}
+     return check_x;
+}
+int check_y() // '@'의 위치(가로축)
+{
+     int check_y;
+     for(int i=1; i< size[n] ; i++){
+          for(int  j=0 ; j < 30; j++)
+          {
+               if(map[n][i][j] == '@')
+                    check_y = j;
+          }}
+     return check_y;
+}
+int finish() // 맵이 정상적으로 끝나는지를 확인하는 함수, Floor배열을 통해 제 위치에 '$'가 있는지 확인
+{
+     int k = 0;
+     for(int i=0; i< size[n] ; i++){
+          for(int j=0;j<30;j++){
+               while(Floor[n][i][j] == 1){
+                    if(map[n][i][j] == '$')
+                         k++;
+                         break;
+               }}}
+     if( k == a[n]){
+          end = time(NULL);
+          diff = difftime(end,start);
+          rank[n] = diff + load_time;
+          n++;
+          return 1;
+
+     }
+}
+
 void inputkey(char input_char) //키보드입력
 {
     int move(int a, int u)//'창고지기'의 움직임 + Undo배열에 움직이 모습 저장
