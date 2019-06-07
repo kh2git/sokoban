@@ -1,11 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <termio.h>
-#include <windows.h>
 
 char name[10]; //이름저장소
 int mvcnt = 0; //움직임카운트
-int stage = 0; //스테이지 값
+int stage = 1; //스테이지 값
 char map[5][30][30] = {0};//맵
 int x_check, y_check; //창고지기의 위치
 int score[5][5] = {0};	// 스테이지, 순위별 이동횟수 저장소
@@ -96,7 +95,7 @@ void map_cnt() //맵박스개수체크
 
 void inputname() //이름입력
 {
-   printf("이름 입력 : ");
+   printf("input name : ");
    scanf("%s",name);
 }
 
@@ -149,7 +148,7 @@ void inputkey(char input_char) //키보드입력
    case 'u':
 	cnt++;
 	break;
-   case 'r':
+   case 't':
 	
 	break;
    case 'n':
