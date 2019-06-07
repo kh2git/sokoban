@@ -174,8 +174,8 @@ void inputkey(char input_char) //키보드입력
     int move(int a, int u)//'창고지기'의 움직임 + Undo배열에 움직이 모습 저장
     {
     u++;
-    int x = check_x(n);
-    int y = check_y(n);
+    x = check_x(n);
+    y = check_y(n);
     int o;
 	
     switch (input_char)
