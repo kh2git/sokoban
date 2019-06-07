@@ -17,7 +17,6 @@ return u;
 void inputkey(char input_char) //키보드입력
 {
    switch (input_char)
-   case 'H':
    case 'h': // 위; 좌표 감소
 
       if (map[n][x][y-1] == 36) // $
@@ -60,7 +59,6 @@ void inputkey(char input_char) //키보드입력
       else
          break;
    
-   case 'J':
    case 'j': // 아래; 좌표 증가
 
       if (map[n][x+1][y] == 36) // $
@@ -103,7 +101,6 @@ void inputkey(char input_char) //키보드입력
       else
          break;
 	 
-   case 'K':
    case 'k': // 위; 좌표 감소
 
       if (map[n][x-1][y] == 36) // $
@@ -145,8 +142,7 @@ void inputkey(char input_char) //키보드입력
       }
       else
          break;
-	 
-   case 'L':	 
+	 	 
    case 'l':
 
       if (map[n][x][y+1] == 36) // $
