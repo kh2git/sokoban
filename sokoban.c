@@ -550,7 +550,7 @@ void man() //d누르면 실행될 수 있도록 만들어야함//
 
 void con()//단계별 완료시 축하메시지
 {
-   if(n==5){
+   if(n>=5){
    printf("Congratulation");
    exit(0);
    }
