@@ -413,14 +413,11 @@ void inputkey(char ch);
 }
    void save() // 's'명령어 , 시간과 맵상황을 저장해서 sokoban.txt 파일에 저장, 뭐 더 save 할게 있으면 추가하고
 	{
-	end = time(NULL);
-	double a = difftime(end,start) + load_time;
 	FILE *out;
 	out = fopen("sokoban.txt","w");
 	for(int i=0;i<10;i++)
 	fprintf(out,"%c",name[i]);
 	fprintf(out,"\n");
-	fprintf(out,"%.1f\n",a);
 	fprintf(out,"%d\n",n);
 	int temp = n;
 	for(n; n < 5; n++){
@@ -434,21 +431,8 @@ void inputkey(char ch);
 	n = temp;
 	fclose(out);
 		}
-	
-	void display() // display help
-{
-     printf("h(왼쪽), j(아래), k(위), l(오른쪽)\n");
-     printf("u(undo)\n");
-     printf("r(replay)\n");
-     printf("n(new)\n");
-     printf("e(exit)\n");
-     printf("s(save)\n");
-     printf("f(file load)\n");
-     printf("d(display help\n");
-     printf("t(top)\n");
-}
 
-void man() //d누르면 실행될 수 있도록 만들어야함//
+void display() //d누르면 실행될 수 있도록 만들어야함//
 {
    printf("창고지기 조정 : 왼쪽-h, 아래-j, 위-k, 오른쪽-l\n");
    printf("가장 최근의 이동기록 취소(5번까지 사용가능 - u\n");
