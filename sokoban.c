@@ -115,6 +115,7 @@ void check() //창고지기의 위치
 		}
 	}
 }
+}
 	
 void pos_storage() //보관장소 좌표
 {
