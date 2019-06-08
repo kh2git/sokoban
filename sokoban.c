@@ -74,7 +74,8 @@ int getch(void)
 
    void map_open() //맵 입력
 {
-
+    int cnt1=0;
+	int cnt2=0; 
    FILE*fp;
 
    fp = fopen("map.txt","r");
@@ -87,6 +88,10 @@ int getch(void)
 
             for(int x=0; x<30; x++){
                 fscanf(fp,"%c",&t);
+				if(t=='$')
+					cnt1++;
+				if(t=='O')
+					cnt2++;
                 if(t=='\n')
                 break;
                 if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e'){
@@ -99,6 +104,9 @@ int getch(void)
                 break;
                 }
         }
+	   if(cnt1 != cnt2){
+		   printf("맵이 잘못되었습니다.");
+		   exit(0);
             }
    fclose(fp);
     }
