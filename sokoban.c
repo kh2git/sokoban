@@ -404,8 +404,8 @@ pos_storage();
 		break;
 		
    case 'n': 
- 	stage = 1;
-	cnt = 0;
+ 	n = 0;
+	mvcnt = 0;
 	map_open(); 
  	break; 
    case 'd': 
