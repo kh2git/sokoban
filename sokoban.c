@@ -288,7 +288,7 @@ void inputkey(char ch)
 	    case 'q':
 		    n++;
 		    break;
-    case 'k': // 위; 좌표 감소
+    case 'k': // 위
 	mvcnt++;
         saveundo();
       if (map[n][x][y-1] == 36) // $
@@ -334,7 +334,7 @@ void inputkey(char ch)
          break;
 
 
-   case 'l': // 아래; 좌표 증가
+   case 'l': // 오른쪽
 	mvcnt++;
         saveundo();
       if (map[n][x+1][y] == 36) // $
@@ -379,7 +379,7 @@ void inputkey(char ch)
       else
          break;
 
-   case 'h': // 위; 좌표 감소
+   case 'h': // 왼쪽  /
 	mvcnt++; 
         saveundo();
       if (map[n][x-1][y] == 36) // $
@@ -420,6 +420,10 @@ void inputkey(char ch)
          map[n][x-1][y] = 64;
 
          break;
+      }
+	else
+         break;
+    
    case 'j'://아래
         mvcnt++;
         saveundo();
@@ -464,7 +468,7 @@ void inputkey(char ch)
       }
       else
          break;
-    }
+    
     
 	case 'u':
 		if(ucnt==0)
@@ -512,7 +516,7 @@ void inputkey(char ch)
    case 't':
 	
 	break;
-}
+	}
    
 }
    void save() // 's'명령어 , 시간과 맵상황을 저장해서 sokoban.txt 파일에 저장, 뭐 더 save 할게 있으면 추가하고
