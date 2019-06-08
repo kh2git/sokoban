@@ -449,70 +449,44 @@ void con()//단계별 완료시 축하메시지
 
 void ranking()  //랭킹입력함수
 {
-	FILE*ifp;
 	FILE*ofp;
-	FILE*wfp;
     	char rdata;
-    	ifp = fopen("ranking.txt", "r");
     	ofp = fopen("ranking.txt", "w");
-    	wfp = fopen("ranking.txt", "a");
-	fscanf(ifp,"%c",&rdata);
-    	fclose(ifp);
-    	if (rdata != 'm')
-    	{
-		for (int i=0; i<=4; i++)
+	char map[5] = "!@#$%";
+	for (int i=0; i<=4; i++)
+	{
+		score[i][5] = rsc[i];
+		for (int z=0; z<10; z++)
+			names[i][5][z] = name[z];
+		fprintf(ofp, "map%d\n\n",n);
+            	for (int m=0; m<=5; m++)
 		{
-			score[i][0] = rsc[i];
-			int n = i + 1;
-            		fprintf(wfp, "map%d\n\n",n);
-            		for (int k=0; k<=9; k++)
-                		names[i][0][k] = name[l];
-            		for (int k=0; k<=9; k++)
-                		fprintf(wfp, "%c", names[i][0][k]);
-			fprintf(wfp, " %d\n\n", score[i][0]);
-			for (int l=0; l<4; l++)
-				fprintf(wfp, "\n\n");
-		}
-		fclose(wfp);
-	}
-    	else
-    	{
-		fprintf(ofp,"");
-		fclose(ofp);
-		for (int i=0; i<=4; i++)
-		{
-			score[i][5] = rsc[i];
-			int n = i + 1;
-			fprintf(wfp, "map%d\n\n",n);
-            		for (int m=0; m<=5; m++)
+			for (int j=0; j<=4; j++)
 			{
-				for (int j=0; j<=4; j++)
+				if (score[i][j] > score[i][j+1])    //이동횟수 비교
 				{
-					if (score[i][j] > score[i][j+1])    //이동횟수 비교
+					temps = score[i][j];
+					score[i][j] = score[i][j+1];
+					score[i][j+1] = temps;
+					for (int k=0; k<=9; k++)
 					{
-						temps = score[i][j];
-						score[i][j] = score[i][j+1];
-						score[i][j] = temps;
-						for (int k=0; k<=9; k++)
-						{
-							tempn = names[i][j][k];
-							names[i][j][k] = names[i][j+1][k];
-							names[i][j+1][k] = tempn;
-						}
-					}
-					else
-						;
-					for (int j=0; j<=4; j++)
-					{
-						for (int k=0; k<=9; k++)
-							fprintf(wfp, "%c", names[i][j][k]);
-						fprintf(wfp, " %d\n\n", score[i][j]);
+						tempn = names[i][j][k];
+						names[i][j][k] = names[i][j+1][k];
+						names[i][j+1][k] = tempn;
 					}
 				}
+				else
+					;
 			}
-            		fclose(wfp);
+		}
+		for (int j=0; j<=4; j++)
+		{
+			for (int k=0; k<=9; k++)
+				fprintf(ofp, "%c", names[i][j][k]);
+			fprintf(ofp, " %d\n\n", score[i][j]);
 		}
 	}
+	fclose(ofp);
 }
 
 int main(void)
