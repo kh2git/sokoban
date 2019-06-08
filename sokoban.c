@@ -524,6 +524,6 @@ int main(void)
 	printf("Hello %s\n",name);
 	map_print();
 	a=getch();
-	void inputkey(a);
+	inputkey(a);
 	}
 }
