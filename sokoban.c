@@ -42,8 +42,10 @@ int main(void)
 	map_open();
 	pos_storage();
 	while(1){
+	system("clear");
 	printf("Hello %s\n",name);
 	printf("count : %d undo : %d\n",mvcnt, ucnt);
+	check_clear();
 	map_print();
 	a=getch();
 	inputkey(a);
@@ -268,8 +270,9 @@ void check_clear()
         for(y=0; y<30; y++){
             if( Floor[n][x][y] == 1 && map[n][x][y] != '$'){
                 check_cnt++;
-                if (check_cnt == 0)
+                if (check_cnt == 0){
                     n++;
+		}
                 }
             }
         }
