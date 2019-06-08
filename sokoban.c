@@ -46,6 +46,7 @@ int main(void)
 	printf("Hello %s\n",name);
 	printf("count : %d undo : %d\n",mvcnt, ucnt);
 	check_clear();
+	con();
 	map_print();
 	a=getch();
 	inputkey(a);
@@ -280,14 +281,13 @@ void check_clear()
 	
 void inputkey(char ch)
 {
-   /* x = check_x();
-
-    y = check_y();
-*/
 	check();
 
 
     switch (ch){
+	    case 'q':
+		    n++;
+		    break;
     case 'k': // 위; 좌표 감소
 	mvcnt++;
         saveundo();
@@ -550,8 +550,10 @@ void man() //d누르면 실행될 수 있도록 만들어야함//
 
 void con()//단계별 완료시 축하메시지
 {
+   if(n==5){
    printf("Congratulation");
-   return 0;
+   exit(0);
+   }
 }
 
 void ranking_input()  //랭킹입력함수
