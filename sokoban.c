@@ -107,13 +107,14 @@ int getch(void)
             if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e')
                 break;
                 
-	     if(cnt1 != cnt2){
+	     
+        }
+	   if(cnt1 != cnt2){
 		   printf("맵이 잘못되었습니다.");
 		   exit(0);
             }
 	    cnt1=0;
 	    cnt2=0;
-        }
 
     }
 	   fclose(fp);
