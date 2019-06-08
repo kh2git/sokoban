@@ -8,12 +8,13 @@ int ucnt=5;//언두
 int mvcnt = 0; //움직임카운트
 int n = 0; //스테이지 값
 char map[5][30][30] = {0};//맵
-char Undo[7][5][MAX][MAX]={0}; //Undo[0]은 read했을때 모습유지, 나머지 undo 명령어를 위한 공
+char Undo[7][5][30][30]={0}; //Undo[0]은 read했을때 모습유지, 나머지 undo 명령어를 위한 공
 int x, y; //창고지기의 위치
 int score[5][6] = {0};	// 랭킹 - 스테이지, 순위별 이동횟수 저장소
 int rsc[5] = {0};	// 랭킹 - 여기에 방금 끝낸 게임 이동횟수 들어감
 char names[5][6][10];	// 랭킹 - 각 스테이지/순위별 플레이어 이름 저장소
 int temps, tempn;   // 랭킹 - 스코어랑 이름 저장소템프
+char Floor[5][30][30] = {0}; //O위치 확인용 
 
 int getch(void)
 {
@@ -113,6 +114,19 @@ void check() //창고지기의 위치
 				y = j;
 		}
 	}
+}
+	
+void pos_storage(void) //보관장소 좌표
+{
+    for(int n=0; n<5; n++){
+        for(int x=0; x<30; x++){
+            for(int y=0; y<30; y++){
+                if (map[n][x][y]=="O")
+                    Floor[n][x][y] = 1
+
+            }
+        }
+    }
 }
 	
 void map_print() //맵출력
@@ -402,6 +416,7 @@ void inputkey(char ch)
 			break;
 			}   
    case 'e':
+	save();
 	printf("SEE YOU %s\n",name);
 	exit(0);
 	break;
