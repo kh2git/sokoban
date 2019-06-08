@@ -49,6 +49,7 @@ int main(void)
 	inputkey(a);
 	}
 }
+
 int getch(void)
 {
 	int ch;
@@ -88,33 +89,39 @@ int getch(void)
 
             for(int x=0; x<30; x++){
                 fscanf(fp,"%c",&t);
-				if(t=='$')
-					cnt1++;
-				if(t=='O')
-					cnt2++;
+		if(t=='$')
+			cnt1++;
+		    
+		if(t=='O')
+			cnt2++;
+		    
                 if(t=='\n')
-                break;
-                if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e'){
-                break;
-                }
+                	break;
+		    
+                if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e')
+                	break;
+               
                 else
-                    map[z][x][y]=t;
+                    	map[z][x][y]=t;
             }
-            if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e'){
+            if(t=='2'||t=='3'||t=='4'||t=='5'||t=='e')
                 break;
-                }
-        }
-	   if(cnt1 != cnt2){
+                
+	     if(cnt1 != cnt2){
 		   printf("맵이 잘못되었습니다.");
 		   exit(0);
             }
-   fclose(fp);
+	    cnt1=0;
+	    cnt2=0;
+        }
+
     }
+	   fclose(fp);
+   }
 
 
 
-
-void map_cnt() //맵박스개수체크
+/*void map_cnt() //맵박스개수체크
 {
    int cnt1 = 0;
    int cnt2 = 0;
@@ -128,15 +135,14 @@ void map_cnt() //맵박스개수체크
 		 }
 	  }
 	  if (cnt1 != cnt2) {
-
 	  printf("잘못된 맵입니다.");
-
+	  exit(0);
 	  }
 	  cnt1 = 0;
 	  cnt2 = 0;
    }
 
-}
+}*/
 
 
 void inputname() //이름입력
