@@ -390,6 +390,15 @@ void inputkey(char ch);
 	cnt = 0;
 	map_open(); 
  	break; 
+   case 'd': 
+	while(1){
+		char tmp;
+		tmp=getch();
+		system("clear");
+		man();
+		if(tmp==d)
+			break;
+			}   
    case 'e':
 	
 	break;
@@ -424,7 +433,7 @@ void inputkey(char ch);
 	fclose(out);
 		}
 
-void display() //d누르면 실행될 수 있도록 만들어야함//
+void man() //d누르면 실행될 수 있도록 만들어야함//
 {
    printf("창고지기 조정 : 왼쪽-h, 아래-j, 위-k, 오른쪽-l\n");
    printf("가장 최근의 이동기록 취소(5번까지 사용가능 - u\n");
@@ -537,12 +546,4 @@ int main(void)
 
 
 
-case 'd': /////이거 뭐
-		while(1){
-			char tmp;
-			tmp=getch();
-			system("clear");
-			man();
-			if(tmp==d)
-				break;
-				}
+
