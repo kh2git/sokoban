@@ -116,13 +116,13 @@ void check() //창고지기의 위치
 	}
 }
 	
-void pos_storage(void) //보관장소 좌표
+void pos_storage() //보관장소 좌표
 {
     for(int n=0; n<5; n++){
         for(int x=0; x<30; x++){
             for(int y=0; y<30; y++){
                 if (map[n][x][y]=="O")
-                    Floor[n][x][y] = 1
+                    Floor[n][x][y] = 1;
 
             }
         }
@@ -138,7 +138,7 @@ void map_print() //맵출력
 	printf("\n");
 	for (int i = 0; i < 30; i++) {
 		for (int j = 0; j < 30; j++) {
-			printf("%c",map[stage-1][j][i]);
+			printf("%c",map[n][j][i]);
 		}
 		printf("\n");
 	}
@@ -170,7 +170,7 @@ int check_y() // '@'의 위치(가로축)
 int finish() // 맵이 정상적으로 끝나는지를 확인하는 함수, Floor배열을 통해 제 위치에 '$'가 있는지 확인
 {
      int k = 0;
-     for(int i=0; i< size[n] ; i++){
+     for(int i=0; i< 30 ; i++){
           for(int j=0;j<30;j++){
                while(Floor[n][i][j] == 1){
                     if(map[n][i][j] == '$')
@@ -184,7 +184,7 @@ void undo() // 'u' 명령어 함수
      	ucnt--;
 	u--;
      	if( u >= 0 ){
-     	for(int i=1;i<size[n];i++){
+     	for(int i=1;i<30;i++){
           for(int j=0;j<30;j++){
           map[n][i][j] = Undo[u][n][i][j];
      	     }
@@ -192,7 +192,7 @@ void undo() // 'u' 명령어 함수
      	}
      	else{
      	u = 4;
-     	for(int i=1;i<size[n];i++){
+     	for(int i=1;i<30;i++){
         for(int j=0;j<30;j++){
         map[n][i][j] = Undo[u][n][i][j];
         }
@@ -221,11 +221,11 @@ void inputkey(char ch)
 
     y = check_y();
 */
-pos_storage(void);
+pos_storage();
 
     switch (ch){
     case 'h': // 위; 좌표 감소
-        saveundo()
+        saveundo();
       if (map[n][x][y-1] == 36) // $
       {
          if(map[n][x][y-2] == 46 || map[n][x][y-2] == 79)
@@ -270,7 +270,7 @@ pos_storage(void);
 
 
    case 'j': // 아래; 좌표 증가
-        saveundo()
+        saveundo();
       if (map[n][x+1][y] == 36) // $
       {
          if(map[n][x+2][y] == 46 || map[n][x+2][y] == 79)
@@ -314,7 +314,7 @@ pos_storage(void);
          break;
 
    case 'k': // 위; 좌표 감소
-        saveundo()
+        saveundo();
       if (map[n][x-1][y] == 36) // $
       {
          if(map[n][x-2][y] == 46 || map[n][x-2][y] == 79)
@@ -354,7 +354,7 @@ pos_storage(void);
 
          break;
    case 'l':
-        saveundo()
+        saveundo();
       if (map[n][x][y+1] == 36) // $
       {
          if(map[n][x][y+2] == 46 || map[n][x][y+2] == 79)
@@ -397,9 +397,9 @@ pos_storage(void);
       else
          break;
     }
-    }
+    
 	case 'u':
-		cnt++;
+		mvcnt++;
 		undo();
 		break;
 		
@@ -443,7 +443,7 @@ pos_storage(void);
 	fprintf(out,"%d\n",n);
 	int temp = n;
 	for(n; n < 5; n++){
-     		for(int i=1 ; i<size[n] ;i ++){
+     		for(int i=1 ; i<30 ;i ++){
           		for(int j=0 ;j<30 ; j++){
               		fprintf(out,"%c",map[n][i][j]);
                        		  }
