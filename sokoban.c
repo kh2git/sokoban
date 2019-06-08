@@ -199,34 +199,188 @@ void saveundo()
 		u=0;
 	}
 }
-	    
+	
 void inputkey(char ch)
 {
     x = check_x(n);
+
     y = check_y(n);
-	
+
 
     switch (ch)
     case 'h': // 위; 좌표 감소
-	saveundo()
+        saveundo()
       if (map[n][x][y-1] == 36) // $
       {
-         if(map[n][x][y-2] == 32 || map[n][x][y-2] == 79)
+         if(map[n][x][y-2] == 46 || map[n][x][y-2] == 79)
             // 상자 옆이 빈공간
          {
           if(Floor[n][x][y])
              map[n][x][y] = 79;
           else
-             map[n][x][y] = 32;
+             map[n][x][y] = 46;
           map[n][x][y-2] = 36;
           map[n][x][y-1] = 64;
           break;
          }
          else
             break;
+
       }
 
+      else if (map[n][x][y-1] == 46) // sp(빈 공간)
+      {
+         if(Floor[n][x][y]) // 1일 경우 O바닥 // 0일 경우 맨바닥
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 46;
 
+         map[n][x][y-1] = 64;
+         break;
+      }
+      else if (map[n][x][y-1] == 79)
+      {
+         if(Floor[n][x][y])
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 46;
+
+         map[n][x][y-1] = 64;
+         break;
+
+      }
+      else
+         break;
+
+
+   case 'j': // 아래; 좌표 증가
+        saveundo()
+      if (map[n][x+1][y] == 36) // $
+      {
+         if(map[n][x+2][y] == 46 || map[n][x+2][y] == 79)
+            // 상자 옆이 빈공간
+         {
+          if(Floor[n][x][y])
+             map[n][x][y] = 79;
+          else
+             map[n][x][y] = 46;
+          map[n][x+2][y] = 36;
+          map[n][x+1][y] = 64;
+          break;
+         }
+         else
+
+            break;
+      }
+
+      else if (map[n][x+1][y] == 46) // sp(빈 공간)
+      {
+         if(Floor[n][x][y]) // 1일 경우 O바닥 // 0일 경우 맨바닥
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 46;
+
+         map[n][x+1][y] = 64;
+         break;
+      }
+      else if (map[n][x+1][y] == 79)
+      {
+         if(Floor[n][x][y])
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 46;
+
+         map[n][x+1][y] = 64;
+
+         break;
+      }
+      else
+         break;
+
+   case 'k': // 위; 좌표 감소
+        saveundo()
+      if (map[n][x-1][y] == 36) // $
+      {
+         if(map[n][x-2][y] == 46 || map[n][x-2][y] == 79)
+            // 상자 옆이 빈공간
+         {
+          if(Floor[n][x][y])
+             map[n][x][y] = 79;
+          else
+             map[n][x][y] = 46;
+          map[n][x-2][y] = 36;
+          map[n][x-1][y] = 64;
+          break;
+         }
+         else
+
+            break;
+      }
+
+      else if (map[n][x-1][y] == 46) // sp(빈 공간)
+      {
+         if(Floor[n][x][y]) // 1일 경우 O바닥 // 0일 경우 맨바닥
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 46;
+
+         map[n][x-1][y] = 64;
+         break;
+      }
+      else if (map[n][x-1][y] == 79)
+      {
+         if(Floor[n][x][y])
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 46;
+
+         map[n][x-1][y] = 64;
+
+         break;
+   case 'l':
+        saveundo()
+      if (map[n][x][y+1] == 36) // $
+      {
+         if(map[n][x][y+2] == 46 || map[n][x][y+2] == 79)
+            // 상자 옆이 빈공간
+         {
+          if(Floor[n][x][y])
+
+             map[n][x][y] = 79;
+          else
+             map[n][x][y] = 46;
+          map[n][x][y+2] = 36;
+          map[n][x][y+1] = 64;
+          break;
+         }
+         else
+            break;
+      }
+
+      else if (map[n][x][y+1] == 46) // sp(빈 공간)
+
+      {
+         if(Floor[n][x][y]) // 1일 경우 O바닥 // 0일 경우 맨바닥
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 46;
+
+         map[n][x][y+1] = 64;
+         break;
+      }
+      else if (map[n][x][y+1] == 79)
+      {
+         if(Floor[n][x][y])
+            map[n][x][y] = 79;
+         else
+            map[n][x][y] = 46;
+
+         map[n][x][y+1] = 64;
+         break;
+      }
+      else
+         break;
+    }
     }
 	case 'u':
 		cnt++;
