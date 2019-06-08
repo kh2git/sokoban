@@ -252,6 +252,7 @@ void inputkey(char ch)
 
     y = check_y();
 */
+	check();
 pos_storage();
 
     switch (ch){
