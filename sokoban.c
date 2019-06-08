@@ -15,7 +15,37 @@ int rsc[5] = {0};	// 랭킹 - 여기에 방금 끝낸 게임 이동횟수 들어
 char names[5][6][10];	// 랭킹 - 각 스테이지/순위별 플레이어 이름 저장소
 int temps, tempn;   // 랭킹 - 스코어랑 이름 저장소템프
 char Floor[5][30][30] = {0}; //O위치 확인용 
+int getch();
+void map_open();
+void map_cnt();
+void inputname();
+void check();
+void pos_storage();
+void map_print();
+int finish();
+void undo();
+void saveundo();
+void inputkey(char ch);
+void save();
+void man();
+void con();
+void ranking_input();
 
+	
+int main(void)
+{
+	char a;
+	printf("Start...");
+	inputname();
+	system("clear");
+	map_open();
+	while(1){
+	printf("Hello %s\n",name);
+	map_print();
+	a=getch();
+	inputkey(a);
+	}
+}
 int getch(void)
 {
 	int ch;
@@ -512,19 +542,4 @@ void ranking_input()  //랭킹입력함수
 		}
 	}
 	fclose(ofp);
-}
-
-int main(void)
-{
-	char a;
-	printf("Start...");
-	inputname();
-	system("clear");
-	map_open();
-	while(1){
-	printf("Hello %s\n",name);
-	map_print();
-	a=getch();
-	inputkey(a);
-	}
 }
