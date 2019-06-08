@@ -478,9 +478,9 @@ void ranking()  //랭킹입력함수
 			int n = i + 1;
 			fprintf(ofp, "map%d\n\n",n);
 			fclose(ofp);
-            		for (int m=0; m<=6; m++)
+            		for (int m=0; m<=5; m++)
 			{
-				for (int j=0; j<=5; j++)
+				for (int j=0; j<=4; j++)
 				{
 					if (score[i][j] > score[i][j+1])    //이동횟수 비교
 					{
