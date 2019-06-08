@@ -257,7 +257,7 @@ void inputkey(char ch)
 
     switch (ch){
     case 'k': // 위; 좌표 감소
-	mvcnt--;
+	mvcnt++;
         saveundo();
       if (map[n][x][y-1] == 36) // $
       {
@@ -303,7 +303,7 @@ void inputkey(char ch)
 
 
    case 'l': // 아래; 좌표 증가
-	mvcnt--;
+	mvcnt++;
         saveundo();
       if (map[n][x+1][y] == 36) // $
       {
@@ -348,7 +348,7 @@ void inputkey(char ch)
          break;
 
    case 'h': // 위; 좌표 감소
-	mvcnt--; 
+	mvcnt++; 
         saveundo();
       if (map[n][x-1][y] == 36) // $
       {
@@ -389,7 +389,7 @@ void inputkey(char ch)
 
          break;
    case 'j'://아래
-        mvcnt--;
+        mvcnt++;
         saveundo();
       if (map[n][x][y+1] == 36) // $
       {
