@@ -39,9 +39,11 @@ int main(void)
 	inputname();
 	system("clear");
 	map_open();
+	map_cnt();
 	pos_storage();
 	while(1){
 	printf("Hello %s\n",name);
+	printf("count : %d undo : %d\n",mvcnt, ucnt);
 	map_print();
 	a=getch();
 	inputkey(a);
@@ -153,7 +155,7 @@ void pos_storage() //보관장소 좌표
     for(int n=0; n<5; n++){
         for(int x=0; x<30; x++){
             for(int y=0; y<30; y++){
-                if (map[n][x][y]=="O")
+                if (map[n][x][y]=='O')
                     Floor[n][x][y] = 1;
 
             }
@@ -163,10 +165,7 @@ void pos_storage() //보관장소 좌표
 	
 void map_print() //맵출력
 {
-	system("clear");
-	for(int i=0; i<10; i++){
-  	printf("%c",name[i]);
-   	}
+	
 	printf("\n");
 	for (int i = 0; i < 30; i++) {
 		for (int j = 0; j < 30; j++) {
@@ -258,6 +257,7 @@ void inputkey(char ch)
 
     switch (ch){
     case 'k': // 위; 좌표 감소
+	mvcnt--;
         saveundo();
       if (map[n][x][y-1] == 36) // $
       {
@@ -303,6 +303,7 @@ void inputkey(char ch)
 
 
    case 'l': // 아래; 좌표 증가
+	mvcnt--;
         saveundo();
       if (map[n][x+1][y] == 36) // $
       {
@@ -347,6 +348,7 @@ void inputkey(char ch)
          break;
 
    case 'h': // 위; 좌표 감소
+	mvcnt--; 
         saveundo();
       if (map[n][x-1][y] == 36) // $
       {
@@ -387,6 +389,7 @@ void inputkey(char ch)
 
          break;
    case 'j'://아래
+        mvcnt--;
         saveundo();
       if (map[n][x][y+1] == 36) // $
       {
@@ -432,10 +435,14 @@ void inputkey(char ch)
     }
     
 	case 'u':
+		if(ucnt==0)
+			break;   
 		mvcnt++;
 		undo();
 		break;
-		
+	case 'r':
+		    map_open();
+			break;
    case 'n': 
  	n = 0;
 	mvcnt = 0;
