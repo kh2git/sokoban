@@ -3,6 +3,7 @@
 #include <termio.h>
 
 char name[10]; //이름저장소
+int u=0;// djsen
 int mvcnt = 0; //움직임카운트
 int n = 0; //스테이지 값
 char map[5][30][30] = {0};//맵
@@ -161,14 +162,40 @@ int finish() // 맵이 정상적으로 끝나는지를 확인하는 함수, Floo
                          break;
                }}}
 }
-
-int move(int a, int u)//'창고지기'의 움직임 + Undo배열에 움직이 모습 저장
-    {
-    u++;
+ 
+	int undo(int u) // 'u' 명령어 함수
+	{
+     	u--;
+     	if( u > 0 ){
+     	for(int i=1;i<size[n];i++){
+          for(int j=0;j<30;j++){
+          map[n][i][j] = Undo[u][n][i][j];
+     	     }
+     	}
+     	}
+     	else{
+     	u = 6;
+     	for(int i=1;i<size[n];i++){
+        for(int j=0;j<30;j++){
+        map[n][i][j] = Undo[u][n][i][j];
+        }
+   }
+   }
+		return u;
+	}
+	    
+void inputkey(char ch);
+{
+   switch(ch)
     x = check_x(n);
     y = check_y(n);
-    int o;
 	
+for(int i =1;i<30;i++){
+      for(int j = 0; j<30; j++){
+      		
+      		Undo[u][n][i][j] = map[n][i][j];
+      	}
+      }
     switch (a)
     case 'h': // 위; 좌표 감소
 
@@ -339,44 +366,8 @@ int move(int a, int u)//'창고지기'의 움직임 + Undo배열에 움직이 �
       else
          break;
     }
-      for(int i =1;i<size[n];i++){
-      	for(int j = 0; j<30; j++){
-      		if(u == 7)
-      		u = 1;
-      		Undo[u][n][i][j] = map[n][i][j];
-      	}
-      }
       
-       f = finish();
-       return u;
-       }	
-	
-
-    
-	int undo(int u) // 'u' 명령어 함수
-	{
-     	u--;
-     	if( u > 0 ){
-     	for(int i=1;i<size[n];i++){
-          for(int j=0;j<30;j++){
-          map[n][i][j] = Undo[u][n][i][j];
-     	     }
-     	}
-     	}
-     	else{
-     	u = 6;
-     	for(int i=1;i<size[n];i++){
-        for(int j=0;j<30;j++){
-        map[n][i][j] = Undo[u][n][i][j];
-        }
-   }
-   }
-		return u;
-	}
-	    
-void inputkey(char ch);
-{
-   switch(ch)
+		
    case 'n': 
  	stage = 1;
 	cnt = 0;
