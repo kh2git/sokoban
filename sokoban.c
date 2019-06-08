@@ -10,7 +10,7 @@ int n = 0; //스테이지 값
 char map[5][30][30] = {0};//맵
 char Undo[7][5][30][30]={0}; //Undo[0]은 read했을때 모습유지, 나머지 undo 명령어를 위한 공
 int x, y; //창고지기의 위치
-int score[5][6] = {0};	// 랭킹 - 스테이지, 순위별 이동횟수 저장소
+int score[5][6] = {{99999},{99999},{99999},{99999},{99999}};	// 랭킹 - 스테이지, 순위별 이동횟수 저장소
 int rsc[5] = {0};	// 랭킹 - 여기에 방금 끝낸 게임 이동횟수 들어감
 char names[5][6][10];	// 랭킹 - 각 스테이지/순위별 플레이어 이름 저장소
 int temps, tempn;   // 랭킹 - 스코어랑 이름 저장소템프
@@ -531,16 +531,31 @@ void ranking_input()  //랭킹입력함수
 		{
 			for (int j=5; j>0; j--)
 			{
-				if (score[i][j] < score[i][j-1])    //이동횟수 비교
+				if (score[i][j-1] <10)
 				{
 					temps = score[i][j];
-					score[i][j] = score[i][j-1];
+					score[i][j] = scores[i][j-1];
 					score[i][j-1] = temps;
 					for (int k=0; k<=9; k++)
 					{
 						tempn = names[i][j][k];
-						names[i][j][k] = names[i][j+1][k];
-						names[i][j-1][k] = tempn;
+						names[i][j][k] = names[i][j-1][k];
+						names[i][j-1][k] =tempn;
+					}
+				}
+				else
+				{
+					if (score[i][j] < score[i][j-1])    //이동횟수 비교
+					{
+						temps = score[i][j];
+						score[i][j] = score[i][j-1];
+						score[i][j-1] = temps;
+						for (int k=0; k<=9; k++)
+						{
+							tempn = names[i][j][k];
+							names[i][j][k] = names[i][j+1][k];
+							names[i][j-1][k] = tempn;
+						}
 					}
 				}
 			}
