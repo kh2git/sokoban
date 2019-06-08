@@ -35,7 +35,7 @@ void ranking_input();
 int main(void)
 {
 	char a;
-	printf("Start...");
+	printf("Start...\n");
 	inputname();
 	system("clear");
 	map_open();
