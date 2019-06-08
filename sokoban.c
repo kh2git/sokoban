@@ -202,9 +202,9 @@ void saveundo()
 	
 void inputkey(char ch)
 {
-    x = check_x(n);
+    x = check_x();
 
-    y = check_y(n);
+    y = check_y();
 
 
     switch (ch)
@@ -507,15 +507,3 @@ int main(void)
 	void inputkey(a);
 	}
 }
-
-
-
-
-
-
-
-
-
-
-
-
