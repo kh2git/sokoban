@@ -458,7 +458,7 @@ void ranking()  //랭킹입력함수
 		score[i][5] = rsc[i];
 		for (int z=0; z<10; z++)
 			names[i][5][z] = name[z];
-		fprintf(ofp, "map%d\n\n",n);
+		fprintf(ofp, "%c\n\n",map[i]);
             	for (int m=0; m<=5; m++)
 		{
 			for (int j=0; j<=4; j++)
