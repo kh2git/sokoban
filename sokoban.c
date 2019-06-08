@@ -441,15 +441,23 @@ void inputkey(char ch)
 	mvcnt = 0;
 	map_open(); 
  	break; 
+      
    case 'd': 
+
+	system("clear");
+
+	man();
+	
 	while(1){
+
 		char tmp;
+
 		tmp=getch();
-		system("clear");
-		man();
-		if(tmp=='d')
+
+		if (tmp == 'd')
 			break;
-			}   
+
+	} 
    case 'e':
 	save();
 	system("clear");
