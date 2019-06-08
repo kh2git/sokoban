@@ -256,7 +256,7 @@ void inputkey(char ch)
 pos_storage();
 
     switch (ch){
-    case 'h': // 위; 좌표 감소
+    case 'k': // 위; 좌표 감소
         saveundo();
       if (map[n][x][y-1] == 36) // $
       {
@@ -301,7 +301,7 @@ pos_storage();
          break;
 
 
-   case 'j': // 아래; 좌표 증가
+   case 'l': // 아래; 좌표 증가
         saveundo();
       if (map[n][x+1][y] == 36) // $
       {
@@ -345,7 +345,7 @@ pos_storage();
       else
          break;
 
-   case 'k': // 위; 좌표 감소
+   case 'h': // 위; 좌표 감소
         saveundo();
       if (map[n][x-1][y] == 36) // $
       {
@@ -385,7 +385,7 @@ pos_storage();
          map[n][x-1][y] = 64;
 
          break;
-   case 'l':
+   case 'j'://아래
         saveundo();
       if (map[n][x][y+1] == 36) // $
       {
