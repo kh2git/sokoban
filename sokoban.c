@@ -109,7 +109,7 @@ void check() //창고지기의 위치
 	int i, j;
 	for(i=0; i<30; i++){
 		for(j=0; j<30; j++){
-			if(map[stage-1][i][j]=='@'){
+			if(map[n][i][j]=='@'){
 				x = i;
 				y = j;
 		}
@@ -144,7 +144,7 @@ void map_print() //맵출력
 	}
 }
 
-int check_x() // '@'의 위치(세로축)
+/*int check_x() // '@'의 위치(세로축)
 {
      int check_x;
      for(int i=1; i< size[n] ; i++){
@@ -165,7 +165,8 @@ int check_y() // '@'의 위치(가로축)
                     check_y = j;
           }}
      return check_y;
-}
+}*/
+	
 int finish() // 맵이 정상적으로 끝나는지를 확인하는 함수, Floor배열을 통해 제 위치에 '$'가 있는지 확인
 {
      int k = 0;
@@ -216,12 +217,13 @@ void saveundo()
 	
 void inputkey(char ch)
 {
-    x = check_x();
+   /* x = check_x();
 
     y = check_y();
+*/
+pos_storage(void);
 
-
-    switch (ch)
+    switch (ch){
     case 'h': // 위; 좌표 감소
         saveundo()
       if (map[n][x][y-1] == 36) // $
@@ -412,7 +414,7 @@ void inputkey(char ch)
 		tmp=getch();
 		system("clear");
 		man();
-		if(tmp==d)
+		if(tmp=='d')
 			break;
 			}   
    case 'e':
@@ -428,6 +430,7 @@ void inputkey(char ch)
    case 't':
 	
 	break;
+}
    
 }
    void save() // 's'명령어 , 시간과 맵상황을 저장해서 sokoban.txt 파일에 저장, 뭐 더 save 할게 있으면 추가하고
