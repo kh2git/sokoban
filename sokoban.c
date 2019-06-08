@@ -397,15 +397,7 @@ void inputkey(char ch);
    case 'f':
 	
 	break;
-   case 'd':
-		while(1){
-			char tmp;
-			tmp=getch();
-			system("clear");
-			man();
-			if(tmp==d)
-				break;
-				}
+   
    case 't':
 	
 	break;
@@ -531,3 +523,23 @@ int main(void)
 	void inputkey(a);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+case 'd': /////이거 뭐
+		while(1){
+			char tmp;
+			tmp=getch();
+			system("clear");
+			man();
+			if(tmp==d)
+				break;
+				}
