@@ -39,8 +39,8 @@ int main(void)
 	inputname();
 	system("clear");
 	map_open();
-	map_cnt();
 	pos_storage();
+	map_cnt();
 	while(1){
 	printf("Hello %s\n",name);
 	printf("count : %d undo : %d\n",mvcnt, ucnt);
