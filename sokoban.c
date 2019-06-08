@@ -270,14 +270,13 @@ void check_clear()
         for(y=0; y<30; y++){
             if( Floor[n][x][y] == 1 && map[n][x][y] != '$'){
                 check_cnt++;
-                if (check_cnt == 0){
-                    n++;
-		}
                 }
             }
         }
+	if (check_cnt == 0){
+                    n++;
+			}
     }
-}
 	
 void inputkey(char ch)
 {
