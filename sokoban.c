@@ -452,13 +452,13 @@ void ranking()  //랭킹입력함수
     	ofp = fopen("ranking.txt", "w");
     	wfp = fopne("ranking.txt", "a");
     	for (int i=0; i<=4; i++)
-		fscanf(ipf,"%c",&rdata);
-    	fclose(ipf);
+		fscanf(ifp,"%c",&rdata);
+    	fclose(ifp);
     	if (rdata != 'm')
     	{
-		score[i][0] = rsc[i];
 		for (int i=0; i<=4; i++)
 		{
+			score[i][0] = rsc[i];
 			int n = i + 1;
             		fprintf(ofp, "map%d\n\n",n);
             		fclose(ofp);
@@ -467,17 +467,21 @@ void ranking()  //랭킹입력함수
             		for (int k=0; k<=9; k++)
                 		fprintf(wfp, "%c", names[i][0][k]);
 			fprintf(wfp, " %d\n\n", score[i][0]);
+			for (int l=0; l<4; l++)
+				fprintf(wfp, "\n\n");
 		}
 		fclose(wfp);
 	}
     	else
     	{
-		score[i][5] = rsc[i];
+		fprintf(ofp,"");
+		fclose(ofp);
 		for (int i=0; i<=4; i++)
 		{
+			score[i][5] = rsc[i];
 			int n = i + 1;
-			fprintf(ofp, "map%d\n\n",n);
-			fclose(ofp);
+			fprintf(wfp, "map%d\n\n",n);
+			fclose(wfp);
             		for (int m=0; m<=5; m++)
 			{
 				for (int j=0; j<=4; j++)
