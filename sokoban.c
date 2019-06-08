@@ -457,7 +457,8 @@ void inputkey(char ch)
 		if (tmp == 'd')
 			break;
 
-	} 
+	}
+	break;
    case 'e':
 	save();
 	system("clear");
