@@ -160,14 +160,6 @@ int finish() // 맵이 정상적으로 끝나는지를 확인하는 함수, Floo
                          k++;
                          break;
                }}}
-     if( k == a[n]){
-          end = time(NULL);
-          diff = difftime(end,start);
-          rank[n] = diff + load_time;
-          n++;
-          return 1;
-
-     }
 }
 
 int move(int a, int u)//'창고지기'의 움직임 + Undo배열에 움직이 모습 저장
