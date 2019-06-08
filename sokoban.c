@@ -39,6 +39,7 @@ int main(void)
 	inputname();
 	system("clear");
 	map_open();
+	pos_storage();
 	while(1){
 	printf("Hello %s\n",name);
 	map_print();
@@ -253,7 +254,7 @@ void inputkey(char ch)
     y = check_y();
 */
 	check();
-pos_storage();
+
 
     switch (ch){
     case 'k': // 위; 좌표 감소
