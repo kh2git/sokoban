@@ -3,7 +3,8 @@
 #include <termio.h>
 
 char name[10]; //이름저장소
-int u=0;// djsen
+int u=0;//언두 배열 
+int ucnt=5;//언두 
 int mvcnt = 0; //움직임카운트
 int n = 0; //스테이지 값
 char map[5][30][30] = {0};//맵
@@ -163,10 +164,11 @@ int finish() // 맵이 정상적으로 끝나는지를 확인하는 함수, Floo
                }}}
 }
  
-	int undo(int u) // 'u' 명령어 함수
+void undo() // 'u' 명령어 함수
 	{
-     	u--;
-     	if( u > 0 ){
+     	ucnt--;
+	u--;
+     	if( u >= 0 ){
      	for(int i=1;i<size[n];i++){
           for(int j=0;j<30;j++){
           map[n][i][j] = Undo[u][n][i][j];
@@ -174,31 +176,39 @@ int finish() // 맵이 정상적으로 끝나는지를 확인하는 함수, Floo
      	}
      	}
      	else{
-     	u = 6;
+     	u = 4;
      	for(int i=1;i<size[n];i++){
         for(int j=0;j<30;j++){
         map[n][i][j] = Undo[u][n][i][j];
         }
    }
    }
-		return u;
+
 	}
-	    
-void inputkey(char ch);
+
+void saveundo()
 {
-   switch(ch)
-    x = check_x(n);
-    y = check_y(n);
-	
-for(int i =1;i<30;i++){
+	for(int i =1;i<30;i++){
       for(int j = 0; j<30; j++){
       		
       		Undo[u][n][i][j] = map[n][i][j];
       	}
       }
-    switch (a)
-    case 'h': // 위; 좌표 감소
+	u++;
+	if(u==5){
+		u=0;
+	}
+}
+	    
+void inputkey(char ch)
+{
+    x = check_x(n);
+    y = check_y(n);
+	
 
+    switch (ch)
+    case 'h': // 위; 좌표 감소
+	saveundo()
       if (map[n][x][y-1] == 36) // $
       {
          if(map[n][x][y-2] == 32 || map[n][x][y-2] == 79)
@@ -241,7 +251,7 @@ for(int i =1;i<30;i++){
    
    
    case 'j': // 아래; 좌표 증가
-
+	saveundo()
       if (map[n][x+1][y] == 36) // $
       {
          if(map[n][x+2][y] == 32 || map[n][x+2][y] == 79)
@@ -283,7 +293,7 @@ for(int i =1;i<30;i++){
          break;
 	 
    case 'k': // 위; 좌표 감소
-
+	saveundo()
       if (map[n][x-1][y] == 36) // $
       {
          if(map[n][x-2][y] == 32 || map[n][x-2][y] == 79)
@@ -324,7 +334,7 @@ for(int i =1;i<30;i++){
       else
          break;
    case 'l':
-
+	saveundo()
       if (map[n][x][y+1] == 36) // $
       {
          if(map[n][x][y+2] == 32 || map[n][x][y+2] == 79)
@@ -366,7 +376,10 @@ for(int i =1;i<30;i++){
       else
          break;
     }
-      
+	case 'u':
+		cnt++;
+		undo();
+		break;
 		
    case 'n': 
  	stage = 1;
