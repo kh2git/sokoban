@@ -420,6 +420,7 @@ pos_storage();
 			}   
    case 'e':
 	save();
+	system("clear");
 	printf("SEE YOU %s\n",name);
 	exit(0);
 	break;
