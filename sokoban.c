@@ -25,6 +25,7 @@ void map_print();
 int finish();
 void undo();
 void saveundo();
+void check_clear();
 void inputkey(char ch);
 void save();
 void man();
@@ -257,6 +258,21 @@ void saveundo()
 	if(u==5){
 		u=0;
 	}
+}
+
+void check_clear()
+{
+    int check_cnt=0;
+    for(x=0; x<30; x++){
+        for(y=0; y<30; y++){
+            if( Floor[n][x][y] == 1 && map[n][x][y] != '$'){
+                check_cnt++;
+                if (check_cnt == 0)
+                    n++;
+                }
+            }
+        }
+    }
 }
 	
 void inputkey(char ch)
