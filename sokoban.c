@@ -402,7 +402,9 @@ void inputkey(char ch)
 			break;
 			}   
    case 'e':
-	
+	save();
+	printf("SEE YOU %s\n",name);
+	exit(0);
 	break;
 
    case 'f':
