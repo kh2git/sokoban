@@ -531,7 +531,7 @@ void ranking_input()  //랭킹입력함수
 		{
 			for (int j=5; j>0; j--)
 			{
-				if (score[i][j-1] <10)
+				if (score[i][j-1] <10)	//위의 점수값이 0일때
 				{
 					temps = score[i][j];
 					score[i][j] = scores[i][j-1];
