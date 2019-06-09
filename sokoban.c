@@ -708,7 +708,7 @@ void ranking_input()  //랭킹입력함수
 		{
 			for (int j=5; j>0; j--)
 			{
-				if (score[i][j-1] <10)	//위의 점수값이 0일때
+				/*if (score[i][j-1] <10)	//위의 점수값이 0일때
 				{
 					temps = score[i][j];
 					score[i][j] = score[i][j-1];
@@ -721,8 +721,8 @@ void ranking_input()  //랭킹입력함수
 					}
 				}
 				else
-				{
-					if (score[i][j] < score[i][j-1])    //이동횟수 비교
+				{*/
+					if (score[i][j] < score[i][j-1]||score[i][j-1]==0)    //이동횟수 비교
 					{
 						temps = score[i][j];
 						score[i][j] = score[i][j-1];
@@ -734,7 +734,7 @@ void ranking_input()  //랭킹입력함수
 							names[i][j-1][k] = tempn;
 						}
 					}
-				}
+				//}
 			}
 		}
 		for (int j=0; j<=4; j++)
