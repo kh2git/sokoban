@@ -706,35 +706,20 @@ void ranking_input()  //랭킹입력함수
 		}
             	for (int m=0; m<=5; m++)
 		{
-			for (int j=5; j>0; j--)
+			for (int j=0; j<5; j++)
 			{
-				/*if (score[i][j-1] <10)	//위의 점수값이 0일때
-				{
-					temps = score[i][j];
-					score[i][j] = score[i][j-1];
-					score[i][j-1] = temps;
-					for (int k=0; k<=9; k++)
-					{
-						tempn = names[i][j][k];
-						names[i][j][k] = names[i][j-1][k];
-						names[i][j-1][k] =tempn;
-					}
-				}
-				else
-				{*/
-					if (score[i][j] < score[i][j-1]||score[i][j-1]==0)    //이동횟수 비교
+					if (score[i][j] < score[i][j+1]||score[i][j+1]==0)    //이동횟수 비교
 					{
 						temps = score[i][j];
-						score[i][j] = score[i][j-1];
+						score[i][j] = score[i][j+1];
 						score[i][j-1] = temps;
 						for (int k=0; k<=9; k++)
 						{
 							tempn = names[i][j][k];
-							names[i][j][k] = names[i][j-1][k];
+							names[i][j][k] = names[i][j+1][k];
 							names[i][j-1][k] = tempn;
 						}
 					}
-				//}
 			}
 		}
 		for (int j=0; j<=4; j++)
