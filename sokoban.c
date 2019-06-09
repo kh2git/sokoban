@@ -123,32 +123,6 @@ int getch(void)
 	   fclose(fp);
    }
 
-
-
-/*void map_cnt() //맵박스개수체크
-{
-   int cnt1 = 0;
-   int cnt2 = 0;
-   for (int i = 0; i < 5; i++) {
-	  for (int j = 0; j < 30; i++) {
-		 for (int k = 0; k < 30; k++) {
-			if (map[i][j][k] == '$')
-			   cnt1++;
-			if (map[i][j][k] == 'O')
-			   cnt2++;
-		 }
-	  }
-	  if (cnt1 != cnt2) {
-	  printf("잘못된 맵입니다.");
-	  exit(0);
-	  }
-	  cnt1 = 0;
-	  cnt2 = 0;
-   }
-
-}*/
-
-
 void inputname() //이름입력
 {
    printf("input name : ");
@@ -193,41 +167,6 @@ void map_print() //맵출력
 	}
 }
 
-/*int check_x() // '@'의 위치(세로축)
-{
-     int check_x;
-     for(int i=1; i< size[n] ; i++){
-          for(int j=0 ; j < 30; j++)
-          {
-               if(map[n][i][j] == '@')
-                    check_x = i;
-          }}
-     return check_x;
-}
-int check_y() // '@'의 위치(가로축)
-{
-     int check_y;
-     for(int i=1; i< size[n] ; i++){
-          for(int  j=0 ; j < 30; j++)
-          {
-               if(map[n][i][j] == '@')
-                    check_y = j;
-          }}
-     return check_y;
-}*/
-	
-int finish() // 맵이 정상적으로 끝나는지를 확인하는 함수, Floor배열을 통해 제 위치에 '$'가 있는지 확인
-{
-     int k = 0;
-     for(int i=0; i< 30 ; i++){
-          for(int j=0;j<30;j++){
-               while(Floor[n][i][j] == 1){
-                    if(map[n][i][j] == '$')
-                         k++;
-                         break;
-               }}}
-}
- 
 void undo() // 'u' 명령어 함수
 	{
      	ucnt--;
@@ -275,7 +214,11 @@ void check_clear()
             }
         }
 	if (check_cnt == 0){
+		score[n][6]= mvcnt;
+		ranking_input();
                     n++;
+		mvcnt=0;
+		ucnt=5;
 			}
     }
 	
