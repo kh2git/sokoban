@@ -739,8 +739,10 @@ void printing(){
         printf("map%d\n", i);
         for(int j=0; j<5; j++){
             printf("%d  ", score[i][j]);
-            for(int k=0; k<10; k++)
-                printf("%c\n", names[i][j][k]);
+            for(int k=0; k<10; k++){
+                printf("%c", names[i][j][k]);
+	    }
+		printf("\n");
         }
     }
 }
