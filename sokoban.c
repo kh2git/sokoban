@@ -619,7 +619,7 @@ void ranking_input()  //랭킹입력함수
 		for (int j=0; j<=4; j++)
 		{
 			for (int k=0; k<10; k++){
-				fprintf(ofp, "%s", names[i][j]);
+				fprintf(ofp, "%c", names[i][j]);
 			}
 			fprintf(ofp, " \n%d\n", score[i][j]);
 		}
