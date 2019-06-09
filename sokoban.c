@@ -11,7 +11,7 @@ char map[5][30][30] = {0,};//맵
 char Undo[7][5][30][30]={0}; //Undo[0]은 read했을때 모습유지, 나머지 undo 명령어를 위한 공
 int x, y; //창고지기의 위치
 int score[5][6] = {{99999},{99999},{99999},{99999},{99999}};	// 랭킹 - 스테이지, 순위별 이동횟수 저장소
-int rsc[5] = {0};	// 랭킹 - 여기에 방금 끝낸 게임 이동횟수 들어감
+//int rsc[5] = {0};	// 랭킹 - 여기에 방금 끝낸 게임 이동횟수 들어감
 char names[5][6][10];	// 랭킹 - 각 스테이지/순위별 플레이어 이름 저장소
 int temps, tempn;   // 랭킹 - 스코어랑 이름 저장소템프
 char Floor[5][30][30] = {0}; //O위치 확인용 
@@ -214,7 +214,7 @@ void check_clear()
             }
         }
 	if (check_cnt == 0){
-		score[n][6]= mvcnt;
+		score[n][5]= mvcnt;
 		ranking_input();
                     n++;
 		mvcnt=0;
@@ -511,7 +511,7 @@ void ranking_input()  //랭킹입력함수
 	char map[5] = "!@#$%";
 	for (int i=0; i<=4; i++)
 	{
-		score[i][5] = rsc[i];
+		//score[i][5] = rsc[i];
 		for (int z=0; z<10; z++)
 			names[i][5][z] = name[z];
 		fprintf(ofp, "%c\n\n",map[i]);
