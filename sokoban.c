@@ -11,7 +11,6 @@ char map[5][30][30] = {0,};//맵
 char Undo[7][5][30][30]={0}; //Undo[0]은 read했을때 모습유지, 나머지 undo 명령어를 위한 공
 int x, y; //창고지기의 위치
 int score[5][6] = {{99999},{99999},{99999},{99999},{99999}};	// 랭킹 - 스테이지, 순위별 이동횟수 저장소
-//int rsc[5] = {0};	// 랭킹 - 여기에 방금 끝낸 게임 이동횟수 들어감
 char names[5][6][10];	// 랭킹 - 각 스테이지/순위별 플레이어 이름 저장소
 int temps, tempn;   // 랭킹 - 스코어랑 이름 저장소템프
 char Floor[5][30][30] = {0}; //O위치 확인용 
@@ -492,10 +491,38 @@ void inputkey(char ch)
 						    if(getch()=='\n')
 							    break;
 					    }
+					    printf("map1\n");
+						for(int j=0; j<5; j++){
+   						 printf("%d  ", score[0][j]);
+    						for(int k=0; k<10; k++){
+      						  printf("%c", names[0][j][k]);
+						}
+							printf("\n");
+					}
+					    while(1){
+						    char tmpp;
+						    tmpp=getch();
+						    if(getch()=='\n')
+							    break;
+					    }
 					    break;
 					    //1단계랭킹
 				case '2':
 					    printf("2");
+					    while(1){
+						    char tmpp;
+						    tmpp=getch();
+						    if(getch()=='\n')
+							    break;
+					    }
+					    printf("map2\n");
+						for(int j=0; j<5; j++){
+   						 printf("%d  ", score[1][j]);
+    						for(int k=0; k<10; k++){
+      						  printf("%c", names[1][j][k]);
+						}
+							printf("\n");
+					}
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
@@ -512,6 +539,20 @@ void inputkey(char ch)
 						    if(getch()=='\n')
 							    break;
 					    }
+					    printf("map3\n");
+						for(int j=0; j<5; j++){
+   						 printf("%d  ", score[2][j]);
+    						for(int k=0; k<10; k++){
+      						  printf("%c", names[2][j][k]);
+						}
+							printf("\n");
+					}
+					    while(1){
+						    char tmpp;
+						    tmpp=getch();
+						    if(getch()=='\n')
+							    break;
+					    }
 					    break;
 					    //3단계랭킹
 				case '4':
@@ -522,10 +563,38 @@ void inputkey(char ch)
 						    if(getch()=='\n')
 							    break;
 					    }
+					    printf("map4\n");
+						for(int j=0; j<5; j++){
+   						 printf("%d  ", score[3][j]);
+    						for(int k=0; k<10; k++){
+      						  printf("%c", names[3][j][k]);
+						}
+							printf("\n");
+					}
+					    while(1){
+						    char tmpp;
+						    tmpp=getch();
+						    if(getch()=='\n')
+							    break;
+					    }
 					    break;
 					    //4단계랭킹
 				case '5':
 					    printf("1");
+					    while(1){
+						    char tmpp;
+						    tmpp=getch();
+						    if(getch()=='\n')
+							    break;
+					    }
+					    printf("map5\n");
+						for(int j=0; j<5; j++){
+   						 printf("%d  ", score[4][j]);
+    						for(int k=0; k<10; k++){
+      						  printf("%c", names[4][j][k]);
+						}
+							printf("\n");
+					}
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
