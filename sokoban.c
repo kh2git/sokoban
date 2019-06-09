@@ -496,7 +496,7 @@ void inputkey(char ch)
 					    system("clear");
 					    printf("map1\n");
 						for(int j=0; j<5; j++){
-							if(score[0][j]=0){
+							if(score[0][j]==0){
 								break;
 							}
    						 printf("%d  ", score[0][j]);
