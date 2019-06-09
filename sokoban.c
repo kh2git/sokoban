@@ -125,10 +125,12 @@ int getch(void)
 
 void inputname() //이름입력
 {
-   printf("input name : ");
-   for(int i=0; i<10; i++){
-   scanf("%c",name);
+   printf("Input name : ");
+   for (int i = 0; i < 11; i++){
+      username[i] = ' ';
    }
+   printf("input Name : ");
+   scanf("%s", username);
 }
 
 void check() //창고지기의 위치
