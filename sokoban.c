@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <termio.h>
+#include <windows.h>
 
 char name[10]; //이름저장소
 int u=0;//언두 배열 
