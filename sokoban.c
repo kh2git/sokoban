@@ -502,6 +502,7 @@ void inputkey(char ch)
 					    printf("map1\n");
 					    
 						for(int j=0; j<5; j++){
+							if(score[0][j]==999999) break;
    						 printf("%d  ", score[0][j]);
     						for(int k=0; k<10; k++){
       						  printf("%c", names[0][j][k]);
