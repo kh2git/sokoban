@@ -734,6 +734,32 @@ void ranking_input()  //랭킹입력함수
 	fclose(ofp);
 }
 
+void ranking_read(){
+    FILE*rifp;
+    rifp = fopen("ranking.txt","r");
+    for (int i=0; i<5; i++)
+    {
+        for (int j=0; j<5; j++)
+        {
+            fscanf(rifp,"%s\n",names[i][j]);
+            fscanf(rifp,"%d\n",&score[i][j]);
+        }
+    }
+    fclose(rifp);
+}
+
+int main(){
+    ranking_read();
+    for (int l=0; l<5; l++)
+    {
+        for (int m=0; m<5; m++){
+            printf("%s",names[l][m]);
+            printf(" %d\n",score[l][m]);
+        }
+    }
+    return 0;
+}
+
 void printing(){
     for(int i=0; i<5; i++){
         printf("map%d\n", i);
