@@ -555,7 +555,7 @@ void inputkey(char ch)
 		for(int y=0; y<30; y++)	{
 			fprintf(save, "%c", map[n][x][y]);
 		}
-		fprintf(save, "\n');
+		fprintf(save, "%c", '\n');
 	}
 
 	fclose(save);
