@@ -17,9 +17,9 @@ char Floor[5][30][30] = {0}; //O위치 확인용
 int getch();
 void map_open();// 박성준, 염한울
 void inputname();// 박성준, 염한울
-void check();// 염한울
-void pos_storage();// 염한울
-void map_print();// 박성준
+void check();// 염한울, 김희환
+void pos_storage();// 염한울, 강재일
+void map_print();// 박성준, 김희환
 void undo();// 강재일,박성준
 void saveundo();// 강재일, 박성준
 void check_clear();// 염한울, 박성준
@@ -35,7 +35,7 @@ void ranking_read();// 김희환,박성준
 
 
 
-int main(void)//박성준
+int main(void)//박성준,김희환, 
 {
 	char a;
 	for (int x=0; x<5; x++)
