@@ -529,25 +529,24 @@ void inputkey(char ch)
    
 }
    void save() // 's'명령어 , 시간과 맵상황을 저장해서 sokoban.txt 파일에 저장, 뭐 더 save 할게 있으면 추가하고
-	{
-	FILE *out;
-	out = fopen("sokoban.txt","w");
-	for(int i=0;i<10;i++)
-	fprintf(out,"%c",name[i]);
-	fprintf(out,"\n");
-	fprintf(out,"%d\n",n);
-	int temp = n;
-	for(n; n < 5; n++){
-     		for(int i=1 ; i<30 ;i ++){
-          		for(int j=0 ;j<30 ; j++){
-              		fprintf(out,"%c",map[n][i][j]);
-                       		  }
-               		fprintf(out,"\n");
-                     		    }
-               		fprintf(out,"\n");}
-	n = temp;
-	fclose(out);
+{
+	
+	FILE *save;
+	save = fopen("sokoban.txt", "w");
+
+	fprintf(save, "%s\n", name);	
+	fprintf(save, "%d\n", mvcnt);	
+	fprintf(save, "%d\n", ucnt);	
+	fprintf(save, "%d\n", n);
+
+	for (int x = 0; x < 30; x++){  //맵 저장	
+		for(int y=0; y<30; y++)	{
+			fprintf(save, "%c\n", map[n][x][y]);
 		}
+	}
+
+	fclose(save);
+}
 
 void man() //d누르면 실행될 수 있도록 만들어야함//
 {
