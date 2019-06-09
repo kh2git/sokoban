@@ -695,6 +695,11 @@ void ranking_input()  //랭킹입력함수
 	FILE*ofp;
     	char rdata;
     	ofp = fopen("ranking.txt", "w");
+	for (int x=0; x<5; x++)
+	{
+		for (int y=0; y<5; y++)
+			names[x][y][0] = '=';
+	}
 	for (int i=0; i<=4; i++)
 	{
 		//score[i][5] = rsc[i];
