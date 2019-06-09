@@ -28,6 +28,7 @@ void saveundo();
 void check_clear();
 void inputkey(char ch);
 void save();
+void fileload();
 void man();
 void con();
 void ranking_input();
@@ -551,6 +552,29 @@ void inputkey(char ch)
 	}
 
 	fclose(save);
+}
+
+void fileload()
+{
+	FILE *load;
+	load = fopen("sokoban.txt", "r");
+	char a;
+	int x=0, y=-1;
+
+	fscanf(load, "%c\n", name); 
+	fscanf(load, "%d\n%d\n%d", &mvcnt, &ucnt, &n);
+
+	for(int x=0; x<30; x++){
+		for(int y=0; y<30; y++){
+			fscanf(load, "%c", &a)
+			if (a == '\n')
+				break;
+			else 
+				map[n][x][y] = a;
+		}
+	}	
+	fclose(load);
+
 }
 
 void man() //d누르면 실행될 수 있도록 만들어야함//
