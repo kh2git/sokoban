@@ -34,7 +34,7 @@ void ranking_input();
 void printing();
 void ranking_read();
 
-	
+
 int main(void)
 {
 	char a;
@@ -87,7 +87,6 @@ int getch(void)
 
 	return ch;
 }
-
 
    void map_open() //맵 입력
 {
@@ -675,7 +674,6 @@ void fileload()
 		}
 	}	
 	fclose(load);
-
 }
 
 void man() //d누르면 실행될 수 있도록 만들어야함//
@@ -735,8 +733,7 @@ void ranking_input()  //랭킹입력함수
 		for (int j=0; j<=4; j++)
 		{
 			
-				fprintf(ofp, "%s", names[i][j]);
-			
+			fprintf(ofp, "%s", names[i][j]);
 			fprintf(ofp, " \n%d\n", score[i][j]);
 		}
 	}
