@@ -576,8 +576,8 @@ void ranking_input()  //랭킹입력함수
 	for (int i=0; i<=4; i++)
 	{
 		//score[i][5] = rsc[i];
-		for (int z=0; z<10; z++)
-			names[i][5][z] = name[z];
+		//for (int z=0; z<10; z++)
+			names[i][5] = name;
 		fprintf(ofp, "%c\n",map[i]);
             	for (int m=0; m<=5; m++)
 		{
@@ -614,8 +614,8 @@ void ranking_input()  //랭킹입력함수
 		}
 		for (int j=0; j<=4; j++)
 		{
-			for (int k=0; k<=9; k++)
-				fprintf(ofp, "%c", names[i][j][k]);
+			//for (int k=0; k<=9; k++)
+				fprintf(ofp, "%s", names[i][j]);
 			fprintf(ofp, " \n%d\n", score[i][j]);
 		}
 	}
