@@ -38,6 +38,11 @@ void ranking_read();
 int main(void)
 {
 	char a;
+	for (int x=0; x<5; x++)
+	{
+		for (int y=0; y<5; y++)
+			names[x][y][0] = '=';
+	}
 	printf("Start...\n");
 	inputname();
 	system("clear");
@@ -693,16 +698,12 @@ void ranking_input()  //랭킹입력함수
 	FILE*ofp;
     	char rdata;
     	ofp = fopen("ranking.txt", "w");
-	for (int x=0; x<5; x++)
-	{
-		for (int y=0; y<5; y++)
-			names[x][y][0] = '=';
-	}
-	/*for(i=0;i<5;i++){
+	
+	for(i=0;i<5;i++){
 		for(j=0;j<6;j++){
 			if(names[i][j][0]=='=') score[i][j]=999999;
 		}
-	}*/
+	}
 	for (int i=0; i<=4; i++)
 	{
 		for (int z=0; z<10; z++){
