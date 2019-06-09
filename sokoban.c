@@ -229,7 +229,11 @@ void inputkey(char ch)
 
     switch (ch){
 	    case 'q':
-		    n++;
+		    score[n][5]= mvcnt;
+		ranking_input();
+                    n++;
+		mvcnt=0;
+		ucnt=5;
 		    break;
     case 'k': // 위
 	mvcnt++;
