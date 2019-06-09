@@ -487,12 +487,12 @@ void inputkey(char ch)
 			    switch(tmp){
 			    	case '1':
 					    printf("1");
-					    while(1){
+					    /*while(1){
 						    char tmpp;
 						    tmpp=getch();
 						    if(getch()=='\n')
 							    break;
-					    }
+					    }*/
 					    system("clear");
 					    printf("map1\n");
 						for(int j=0; j<5; j++){
@@ -502,12 +502,12 @@ void inputkey(char ch)
 						}
 							printf("\n");
 					}
-					    while(1){
+					    /*while(1){
 						    char tmpp;
 						    tmpp=getch();
 						    if(getch()=='\n')
 							    break;
-					    }
+					    }*/
 					    break;
 					    //1단계랭킹
 				case '2':
@@ -756,6 +756,7 @@ void ranking_read(){
 }
 
 void printing(){
+    system("clear");
     for(int i=0; i<5; i++){
         printf("map%d\n", i);
         for(int j=0; j<5; j++){
@@ -766,4 +767,11 @@ void printing(){
 		printf("\n");
         }
     }
+	int c;
+	while(1){
+		c=putch();
+		if(c=='\n'){
+			break;
+		}
+	}
 }
