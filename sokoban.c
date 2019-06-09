@@ -243,13 +243,13 @@ void inputkey(char ch)
 
 
     switch (ch){
-	    case 'q':
+	    /*case 'q':
 		    score[n][5]= mvcnt;
 		ranking_input();
                     n++;
 		mvcnt=0;
 		ucnt=5;
-		    break;
+		    break;*/ // 스테이지 넘어가기 
     case 'k': // 위
 	mvcnt++;
         saveundo();
