@@ -48,6 +48,7 @@ int main(void)
 	for(int i=0;i<10;i++){
 		printf("%c",name[i]);
 	}
+	printf("\n");
 	printf("count : %d undo : %d\n",mvcnt, ucnt);
 	check_clear();
 	con();
@@ -133,7 +134,6 @@ void inputname() //이름입력
    for (int i = 0; i < 11; i++){
       name[i] = ' ';
    }
-   printf("input Name : ");
    scanf("%s", name);
 }
 
