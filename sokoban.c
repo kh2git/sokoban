@@ -764,7 +764,7 @@ void ranking_read(){
 void printing(){
     system("clear");
     for(int i=0; i<5; i++){
-        printf("map%d\n", i);
+        printf("map%d\n", i+1);
         for(int j=0; j<5; j++){
             printf("%d  ", score[i][j]);
             for(int k=0; k<10; k++){
