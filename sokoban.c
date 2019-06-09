@@ -566,8 +566,8 @@ void fileload()
 	char a;
 	int x=0, y=0;
 
-	fscanf(load, "%c\n", name); 
-	fscanf(load, "%d\n%d\n%d", &mvcnt, &ucnt, &n);
+	fscanf(load, "%s\n", name); 
+	fscanf(load, "%d\n%d\n%d\n", &mvcnt, &ucnt, &n);
 
 	for(int x=0; x<30; x++){
 		for(int y=0; y<30; y++){
