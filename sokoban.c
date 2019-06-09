@@ -605,7 +605,7 @@ void ranking_input()  //랭킹입력함수
 						for (int k=0; k<=9; k++)
 						{
 							tempn = names[i][j][k];
-							names[i][j][k] = names[i][j+1][k];
+							names[i][j][k] = names[i][j-1][k];
 							names[i][j-1][k] = tempn;
 						}
 					}
