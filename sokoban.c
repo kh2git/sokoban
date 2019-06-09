@@ -699,8 +699,8 @@ void ranking_input()  //랭킹입력함수
     	char rdata;
     	ofp = fopen("ranking.txt", "w");
 	
-	for(i=0;i<5;i++){
-		for(j=0;j<6;j++){
+	for(int i=0;i<5;i++){
+		for(int j=0;j<6;j++){
 			if(names[i][j][0]=='=') score[i][j]=999999;
 		}
 	}
