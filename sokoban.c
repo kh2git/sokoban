@@ -32,6 +32,7 @@ void fileload();
 void man();
 void con();
 void ranking_input();
+void printing();
 
 	
 int main(void)
@@ -479,7 +480,7 @@ void inputkey(char ch)
 		    char tmp;
 		    tmp=getch();
 		    if(tmp=='\n'){
-			    //전체랭킹
+			    printing();
 		    }
 		    else{
 			    switch(tmp){
@@ -553,9 +554,14 @@ void inputkey(char ch)
 
 	for (int x = 0; x < 30; x++){  //맵 저장	
 		for(int y=0; y<30; y++)	{
+			if(map[n][x][y]==0){
+				fprintf(save, "%c", '\n');
+				break;
+			}
 			fprintf(save, "%c", map[n][x][y]);
+			
 		}
-		fprintf(save, "%c", '\n');
+		
 	}
 
 	fclose(save);
@@ -659,4 +665,15 @@ void ranking_input()  //랭킹입력함수
 		}
 	}
 	fclose(ofp);
+}
+
+void printing(){
+    for(int i=0; i<5; i++){
+        printf("map%d\n", i);
+        for(int j=0; j<5; j++){
+            printf("%d  ", score[i][j]);
+            for(int k=0; k<10; k++)
+                printf("%c\n", names[i][j][k]);
+        }
+    }
 }
