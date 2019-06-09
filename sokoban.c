@@ -21,7 +21,6 @@ void inputname();
 void check();
 void pos_storage();
 void map_print();
-int finish();
 void undo();
 void saveundo();
 void check_clear();
