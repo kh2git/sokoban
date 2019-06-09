@@ -15,27 +15,27 @@ char names[5][6][10];	// 랭킹 - 각 스테이지/순위별 플레이어 이름
 int temps, tempn;   // 랭킹 - 스코어랑 이름 저장소템프
 char Floor[5][30][30] = {0}; //O위치 확인용 
 int getch();
-void map_open();
-void inputname();
-void check();
-void pos_storage();
-void map_print();
-void undo();
-void saveundo();
-void check_clear();
-void inputkey(char ch);
-void save();
-void fileload();
-void man();
-void con();
-void ranking_input();
-void printing();
-void ranking_read();
+void map_open();// 박성준, 염한울
+void inputname();// 박성준, 염한울
+void check();// 염한울
+void pos_storage();// 염한울
+void map_print();// 박성준
+void undo();// 강재일,박성준
+void saveundo();// 강재일, 박성준
+void check_clear();// 염한울, 박성준
+void inputkey(char ch);// 염한울,박성준,강재일,김희환
+void save();//염한울, 박성준
+void fileload();//염한울, 박성준
+void man();// 염한울, 강재일
+void con();// 박성준,염한울
+void ranking_input();// 김희환
+void printing();//염한울, 박성준
+void ranking_read();// 김희환,박성준
 
 
 
 
-int main(void)
+int main(void)//박성준
 {
 	char a;
 	for (int x=0; x<5; x++)
