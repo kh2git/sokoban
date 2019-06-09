@@ -32,6 +32,7 @@ void man();
 void con();
 void ranking_input();
 void printing();
+void ranking_read();
 
 	
 int main(void)
@@ -42,6 +43,7 @@ int main(void)
 	system("clear");
 	map_open();
 	pos_storage();
+	ranking_read();
 	while(1){
 	system("clear");
 	printf("Hello ");
@@ -746,18 +748,6 @@ void ranking_read(){
         }
     }
     fclose(rifp);
-}
-
-int main(){
-    ranking_read();
-    for (int l=0; l<5; l++)
-    {
-        for (int m=0; m<5; m++){
-            printf("%s",names[l][m]);
-            printf(" %d\n",score[l][m]);
-        }
-    }
-    return 0;
 }
 
 void printing(){
