@@ -465,8 +465,13 @@ void inputkey(char ch)
 	break;
 
    case 'f':
-	
+	fileload();
 	break;
+	    
+   case 's':
+			save();
+			break;
+			
    
    case 't':
 		    printf("t");
@@ -559,7 +564,7 @@ void fileload()
 	FILE *load;
 	load = fopen("sokoban.txt", "r");
 	char a;
-	int x=0, y=-1;
+	int x=0, y=0;
 
 	fscanf(load, "%c\n", name); 
 	fscanf(load, "%d\n%d\n%d", &mvcnt, &ucnt, &n);
