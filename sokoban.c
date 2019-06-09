@@ -204,7 +204,7 @@ void undo() // 'u' 명령어 함수
 
 	}
 
-void saveundo()
+void saveundo() // saveundo 함수
 {
 	for(int i =1;i<30;i++){
       for(int j = 0; j<30; j++){
@@ -218,7 +218,7 @@ void saveundo()
 	}
 }
 
-void check_clear()
+void check_clear() // 스테이지 확인 함수
 {
     int check_cnt=0;
     for(x=0; x<30; x++){
@@ -237,7 +237,7 @@ void check_clear()
 			}
     }
 	
-void inputkey(char ch)
+void inputkey(char ch) // 방향키를 받는 함수
 {
 	check();
 
@@ -647,7 +647,7 @@ void inputkey(char ch)
 	fclose(save);
 }
 
-void fileload()
+void fileload() // save시점에서부터 이어서 게임하게 하는 함수
 {
 	FILE *load;
 	load = fopen("sokoban.txt", "r");
@@ -733,7 +733,7 @@ void ranking_input()  //랭킹입력함수
 	fclose(ofp);
 }
 
-void ranking_read(){
+void ranking_read(){  // ranking.txt에서 랭킹을 읽어오는 함수
     FILE*rifp;
     rifp = fopen("ranking.txt","r");
     for (int i=0; i<5; i++)
@@ -747,7 +747,7 @@ void ranking_read(){
     fclose(rifp);
 }
 
-void printing(){
+void printing(){  // 맵 전체 랭킹을 출력하는 함수
     system("clear");
     for(int i=0; i<5; i++){
         printf("map%d\n", i+1);
