@@ -487,27 +487,31 @@ void inputkey(char ch)
 			    switch(tmp){
 			    	case '1':
 					    printf("1");
-					    /*while(1){
+					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(getch()=='\n')
+						    if(tmpp()=='\n')
 							    break;
-					    }*/
+					    }
 					    system("clear");
 					    printf("map1\n");
 						for(int j=0; j<5; j++){
+							if(score[0][j]=0){
+								break;
+							}
    						 printf("%d  ", score[0][j]);
     						for(int k=0; k<10; k++){
       						  printf("%c", names[0][j][k]);
 						}
 							printf("\n");
+							
 					}
-					    /*while(1){
+					   	 while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(getch()=='\n')
+						    if(tmpp()=='\n')
 							    break;
-					    }*/
+					    }
 					    break;
 					    //1단계랭킹
 				case '2':
@@ -515,7 +519,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(getch()=='\n')
+						    if(tmpp()=='\n')
 							    break;
 					    }
 					    system("clear");
@@ -530,7 +534,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(getch()=='\n')
+						    if(tmpp()=='\n')
 							    break;
 					    }
 					    break;
@@ -540,7 +544,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(getch()=='\n')
+						    if(tmpp()=='\n')
 							    break;
 					    }
 					    system("clear");
@@ -555,7 +559,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(getch()=='\n')
+						    if(tmpp()=='\n')
 							    break;
 					    }
 					    break;
@@ -565,7 +569,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(getch()=='\n')
+						    if(tmpp()=='\n')
 							    break;
 					    }
 					    system("clear");
@@ -580,7 +584,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(getch()=='\n')
+						    if(tmpp()=='\n')
 							    break;
 					    }
 					    break;
@@ -590,7 +594,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(getch()=='\n')
+						    if(tmpp()=='\n')
 							    break;
 					    }
 					    printf("map5\n");
@@ -605,7 +609,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(getch()=='\n')
+						    if(tmpp()=='\n')
 							    break;
 					    }
 					    break;
