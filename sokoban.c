@@ -127,10 +127,10 @@ void inputname() //이름입력
 {
    printf("Input name : ");
    for (int i = 0; i < 11; i++){
-      username[i] = ' ';
+      name[i] = ' ';
    }
    printf("input Name : ");
-   scanf("%s", username);
+   scanf("%s", name);
 }
 
 void check() //창고지기의 위치
