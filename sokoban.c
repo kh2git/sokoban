@@ -43,7 +43,10 @@ int main(void)
 	pos_storage();
 	while(1){
 	system("clear");
-	printf("Hello %s\n",name);
+	printf("Hello ");
+	for(int i=0;i<10;i++){
+		printf("%c",name[i]);
+	}
 	printf("count : %d undo : %d\n",mvcnt, ucnt);
 	check_clear();
 	con();
