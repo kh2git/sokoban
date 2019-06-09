@@ -33,6 +33,8 @@ void printing();
 void ranking_read();
 
 
+
+
 int main(void)
 {
 	char a;
