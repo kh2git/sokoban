@@ -529,6 +529,7 @@ void inputkey(char ch)
 					    system("clear");
 					    printf("map2\n");
 						for(int j=0; j<5; j++){
+							if(score[0][j]==999999) break;
    						 printf("%d  ", score[1][j]);
     						for(int k=0; k<10; k++){
       						  printf("%c", names[1][j][k]);
@@ -554,6 +555,7 @@ void inputkey(char ch)
 					    system("clear");
 					    printf("map3\n");
 						for(int j=0; j<5; j++){
+							if(score[0][j]==999999) break;
    						 printf("%d  ", score[2][j]);
     						for(int k=0; k<10; k++){
       						  printf("%c", names[2][j][k]);
@@ -579,6 +581,7 @@ void inputkey(char ch)
 					    system("clear");
 					    printf("map4\n");
 						for(int j=0; j<5; j++){
+							if(score[0][j]==999999) break;
    						 printf("%d  ", score[3][j]);
     						for(int k=0; k<10; k++){
       						  printf("%c", names[3][j][k]);
@@ -604,6 +607,7 @@ void inputkey(char ch)
 					    printf("map5\n");
 					    system("clear");
 						for(int j=0; j<5; j++){
+							if(score[0][j]==999999) break;
    						 printf("%d  ", score[4][j]);
     						for(int k=0; k<10; k++){
       						  printf("%c", names[4][j][k]);
@@ -758,6 +762,7 @@ void printing(){
     for(int i=0; i<5; i++){
         printf("map%d\n", i+1);
         for(int j=0; j<5; j++){
+		if(score[i][j]==999999) break;
             printf("%d  ", score[i][j]);
             for(int k=0; k<10; k++){
                 printf("%c", names[i][j][k]);
