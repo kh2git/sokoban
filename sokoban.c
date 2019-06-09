@@ -461,6 +461,66 @@ void inputkey(char ch)
 	break;
    
    case 't':
+		    pritnf("t");
+		    char tmp;
+		    tmp=getch();
+		    if(tmp=='\n'){
+			    //전체랭킹
+		    }
+		    else{
+			    switch(tmp){
+			    	case '1':
+					    printf("1");
+					    while(1){
+						    char tmpp;
+						    tmpp=getch();
+						    if(getch()=='\n')
+							    break;
+					    }
+					    
+					    //1단계랭킹
+				case '2':
+					    printf("2");
+					    while(1){
+						    char tmpp;
+						    tmpp=getch();
+						    if(getch()=='\n')
+							    break;
+					    }
+					    
+					    //2단계랭킹	    
+				case '3':
+					    printf("1");
+					    while(1){
+						    char tmpp;
+						    tmpp=getch();
+						    if(getch()=='\n')
+							    break;
+					    }
+					    
+					    //3단계랭킹
+				case '4':
+					    printf("1");
+					    while(1){
+						    char tmpp;
+						    tmpp=getch();
+						    if(getch()=='\n')
+							    break;
+					    }
+					    
+					    //4단계랭킹
+				case '5':
+					    printf("1");
+					    while(1){
+						    char tmpp;
+						    tmpp=getch();
+						    if(getch()=='\n')
+							    break;
+					    }
+					    
+					    //5단계랭킹	    
+			    }
+		    }
 	
 	break;
 	}
