@@ -571,7 +571,7 @@ void fileload()
 
 	for(int x=0; x<30; x++){
 		for(int y=0; y<30; y++){
-			fscanf(load, "%c", &a)
+			fscanf(load, "%c", &a);
 			if (a == '\n')
 				break;
 			else 
