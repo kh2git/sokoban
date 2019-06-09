@@ -16,7 +16,6 @@ int temps, tempn;   // 랭킹 - 스코어랑 이름 저장소템프
 char Floor[5][30][30] = {0}; //O위치 확인용 
 int getch();
 void map_open();
-void map_cnt();
 void inputname();
 void check();
 void pos_storage();
