@@ -52,6 +52,7 @@ int main(void)
 	printf("count : %d undo : %d\n",mvcnt, ucnt);
 	check_clear();
 	con();
+	check();
 	map_print();
 	a=getch();
 	inputkey(a);
@@ -552,8 +553,9 @@ void inputkey(char ch)
 
 	for (int x = 0; x < 30; x++){  //맵 저장	
 		for(int y=0; y<30; y++)	{
-			fprintf(save, "%c\n", map[n][x][y]);
+			fprintf(save, "%c", map[n][x][y]);
 		}
+		fprintf(save, "\n');
 	}
 
 	fclose(save);
