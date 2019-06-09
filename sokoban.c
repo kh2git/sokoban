@@ -493,6 +493,7 @@ void inputkey(char ch)
 						    if(getch()=='\n')
 							    break;
 					    }
+					    system("clear");
 					    printf("map1\n");
 						for(int j=0; j<5; j++){
    						 printf("%d  ", score[0][j]);
@@ -517,6 +518,7 @@ void inputkey(char ch)
 						    if(getch()=='\n')
 							    break;
 					    }
+					    system("clear");
 					    printf("map2\n");
 						for(int j=0; j<5; j++){
    						 printf("%d  ", score[1][j]);
@@ -541,6 +543,7 @@ void inputkey(char ch)
 						    if(getch()=='\n')
 							    break;
 					    }
+					    system("clear");
 					    printf("map3\n");
 						for(int j=0; j<5; j++){
    						 printf("%d  ", score[2][j]);
@@ -565,6 +568,7 @@ void inputkey(char ch)
 						    if(getch()=='\n')
 							    break;
 					    }
+					    system("clear");
 					    printf("map4\n");
 						for(int j=0; j<5; j++){
    						 printf("%d  ", score[3][j]);
@@ -590,6 +594,7 @@ void inputkey(char ch)
 							    break;
 					    }
 					    printf("map5\n");
+					    system("clear");
 						for(int j=0; j<5; j++){
    						 printf("%d  ", score[4][j]);
     						for(int k=0; k<10; k++){
