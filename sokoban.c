@@ -490,7 +490,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(tmpp()=='\n')
+						    if(tmpp=='\n')
 							    break;
 					    }
 					    system("clear");
@@ -509,7 +509,7 @@ void inputkey(char ch)
 					   	 while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(tmpp()=='\n')
+						    if(tmpp=='\n')
 							    break;
 					    }
 					    break;
@@ -519,7 +519,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(tmpp()=='\n')
+						    if(tmpp=='\n')
 							    break;
 					    }
 					    system("clear");
@@ -534,7 +534,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(tmpp()=='\n')
+						    if(tmpp=='\n')
 							    break;
 					    }
 					    break;
@@ -544,7 +544,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(tmpp()=='\n')
+						    if(tmpp=='\n')
 							    break;
 					    }
 					    system("clear");
@@ -559,7 +559,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(tmpp()=='\n')
+						    if(tmpp=='\n')
 							    break;
 					    }
 					    break;
@@ -569,7 +569,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(tmpp()=='\n')
+						    if(tmpp=='\n')
 							    break;
 					    }
 					    system("clear");
@@ -584,7 +584,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(tmpp()=='\n')
+						    if(tmpp=='\n')
 							    break;
 					    }
 					    break;
@@ -594,7 +594,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(tmpp()=='\n')
+						    if(tmpp=='\n')
 							    break;
 					    }
 					    printf("map5\n");
@@ -609,7 +609,7 @@ void inputkey(char ch)
 					    while(1){
 						    char tmpp;
 						    tmpp=getch();
-						    if(tmpp()=='\n')
+						    if(tmpp=='\n')
 							    break;
 					    }
 					    break;
@@ -773,7 +773,7 @@ void printing(){
     }
 	int c;
 	while(1){
-		c=putch();
+		c=getch();
 		if(c=='\n'){
 			break;
 		}
